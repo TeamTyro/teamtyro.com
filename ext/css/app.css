@@ -1,6 +1,6 @@
 /* Artfully masterminded by ZURB  */
 
-/* -------------------------------------------------- 
+/* --------------------------------------------------
    Table of Contents
 -----------------------------------------------------
 :: Shared Styles
@@ -12,12 +12,19 @@
 /* -----------------------------------------
    Shared Styles
 ----------------------------------------- */
-@media only screen and (max-width: 500px) { 
+@media only screen and (max-width: 500px) {
 	.gbanner {
 		display: none;
 	}
 }
-
+header {
+    background-image: linear-gradient(left bottom, rgb(137,204,224) 50%, rgb(43,166,203) 86%);
+    background-image: -o-linear-gradient(left bottom, rgb(137,204,224) 50%, rgb(43,166,203) 86%);
+    background-image: -moz-linear-gradient(left bottom, rgb(137,204,224) 50%, rgb(43,166,203) 86%);
+    background-image: -webkit-linear-gradient(left bottom, rgb(137,204,224) 50%, rgb(43,166,203) 86%);
+    background-image: -ms-linear-gradient(left bottom, rgb(137,204,224) 50%, rgb(43,166,203) 86%);
+    background-image: -webkit-gradient(  linear,  left bottom,  right top,  color-stop(0.5, rgb(137,204,224)),  color-stop(0.86, rgb(43,166,203)) );
+}
 .fancy p{
 	text-indent: 2em;
 }
