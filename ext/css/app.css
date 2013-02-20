@@ -18,15 +18,32 @@
 	}
 }
 header {
-    background-image: linear-gradient(left bottom, rgb(137,204,224) 50%, rgb(43,166,203) 86%);
-    background-image: -o-linear-gradient(left bottom, rgb(137,204,224) 50%, rgb(43,166,203) 86%);
-    background-image: -moz-linear-gradient(left bottom, rgb(137,204,224) 50%, rgb(43,166,203) 86%);
-    background-image: -webkit-linear-gradient(left bottom, rgb(137,204,224) 50%, rgb(43,166,203) 86%);
-    background-image: -ms-linear-gradient(left bottom, rgb(137,204,224) 50%, rgb(43,166,203) 86%);
-    background-image: -webkit-gradient(  linear,  left bottom,  right top,  color-stop(0.5, rgb(137,204,224)),  color-stop(0.86, rgb(43,166,203)) );
+  background-image: linear-gradient(left bottom, rgb(137,204,224) 50%, rgb(43,166,203) 86%);
+  background-image: -o-linear-gradient(left bottom, rgb(137,204,224) 50%, rgb(43,166,203) 86%);
+  background-image: -moz-linear-gradient(left bottom, rgb(137,204,224) 50%, rgb(43,166,203) 86%);
+  background-image: -webkit-linear-gradient(left bottom, rgb(137,204,224) 50%, rgb(43,166,203) 86%);
+  background-image: -ms-linear-gradient(left bottom, rgb(137,204,224) 50%, rgb(43,166,203) 86%);
+  background-image: -webkit-gradient(  linear,  left bottom,  right top,  color-stop(0.5, rgb(137,204,224)),  color-stop(0.86, rgb(43,166,203)) );
 }
-.fancy p{
-	text-indent: 2em;
+header h1 {
+  font-size: 88px;
+}
+header h5 {
+  font-style: italic;
+}
+.nav {
+  width: 100%;
+  text-align: center;
+}
+.wrapper {
+  background: #222;
+  min-height: 45px;
+  line-height: 45px;
+  margin: 0 0 30px 0;
+  padding: 0;
+  width: 100%;
+  position: relative;
+  height: 20px;
 }
 .footer {
 	border-top: 1px solid gray;
@@ -38,9 +55,6 @@ header {
 ----------------------------------------- */
 .call {
 	text-align: center;
-}
-.nav h5 {
-	font-style: italic;
 }
 
 
