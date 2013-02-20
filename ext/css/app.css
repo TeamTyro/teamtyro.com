@@ -1,0 +1,44 @@
+/* Artfully masterminded by ZURB  */
+
+/* -------------------------------------------------- 
+   Table of Contents
+-----------------------------------------------------
+:: Shared Styles
+:: Page Name 1
+:: Page Name 2
+*/
+
+
+/* -----------------------------------------
+   Shared Styles
+----------------------------------------- */
+@media only screen and (max-width: 500px) { 
+	.gbanner {
+		display: none;
+	}
+}
+
+.fancy p{
+	text-indent: 2em;
+}
+.footer {
+	border-top: 1px solid gray;
+	margin: 15 15 0 0;
+}
+
+/* -----------------------------------------
+   Home Page
+----------------------------------------- */
+.call {
+	text-align: center;
+}
+.nav h5 {
+	font-style: italic;
+}
+
+
+/* -----------------------------------------
+   Page Name 2
+----------------------------------------- */
+
+
