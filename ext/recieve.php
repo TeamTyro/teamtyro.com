@@ -6,6 +6,10 @@
  
     # Create output string
     $str = "\"$stime\", \"$etime\", \"$moves\"\n";
+
+    $fh = fopen("postData.txt", "a+");
+    fwrite($fh, $str);
+    fclose($fh);
  
     echo $str;
     echo "done";
