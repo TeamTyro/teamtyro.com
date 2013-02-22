@@ -12,7 +12,7 @@
 /* -----------------------------------------
    Shared Styles
 ----------------------------------------- */
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 768px) {
 	.gbanner {
 		display: none;
 	}
@@ -34,6 +34,9 @@ header h5 {
 .nav {
   width: 100%;
   text-align: center;
+}
+header .twelve {
+  margin: 35px 0 35px;
 }
 .wrapper {
   background: #222;
