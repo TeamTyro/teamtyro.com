@@ -27,6 +27,8 @@ header {
 }
 header h1 {
   font-size: 88px;
+  text-shadow: 2px 2px 12px #E6E6E6;
+  filter: dropshadow(color=#e6e6e6, offx=0, offy=0);
 }
 header h5 {
   font-style: italic;
