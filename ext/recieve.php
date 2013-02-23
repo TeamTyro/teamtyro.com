@@ -1,8 +1,8 @@
 <?php
     # Database variables
-    $dbhost = 'localhost:3036'
-    $dbuser = 'c0smic_tyro'
-    $dbpass = '2$M*k^4!?oDm'
+    $dbhost = 'localhost:3036';
+    $dbuser = 'c0smic_tyro';
+    $dbpass = '2$M*k^4!?oDm';
 
     # Read GET variables
     $stime = $_POST['stime'];
