@@ -16,6 +16,11 @@
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.js" type="text/javascript"></script>
 	<script src="ext/js/jquery.foundation.topbar.js"></script>
+	<script src="ext/js/jquery.foundation.clearing.js"></script>
+	<script src="ext/js/jquery.foundation.navigation.js"></script>
+	<script src="ext/js/jquery.foundation.placeholder.js"></script>
+	<script src="ext/js/modernizr.foundation.js"></script>
+
 
 	<!--
 	 ______                            ______
@@ -47,8 +52,8 @@
 	</div>
 </header>
 <div class="wrapper">
-	<div class="row">
-		<nav class="top-bar contain-to-grid sticky">
+	<div class="row contain-to-grid sticky">
+		<nav class="top-bar">
 			<section>
 				<ul class="left">
 					<li><a href="#">About</a></li>
@@ -63,7 +68,7 @@
 <div class="row">
 	<div class="three columns">
 		<ul class="nav-bar vertical">
-  			<li class="active"><a href="#">Nav Item 1</a></li>
+  			<li class="active"><a href="#">About</a></li>
   			<li><a href="#">Nav Item 2</a></li>
   			<li><a href="#">Nav Item 3</a></li>
   			<li><a href="#">Nav Item 4</a></li>
@@ -71,13 +76,30 @@
 	</div>
 	<div class="nine columns">
 		<div>
-			<h3>What are we doing?</h3>
+			<h3>About</h3>
 			<p class="fancy">This experiment attempts to find which artificial intelligence algorithm most acts like a human mind for solving a type of puzzle. The algorithms being tested for this experiment are a neural network algorithm, and a genetic algorithm. The humans will be the control group, and run the same puzzle as the algorithms will in a temperature regulated room. </p>
 		</div>
 		<div>
-			<h3>Why we need you</h3>
-			<p>Our research relies on human testing on playing </p>
-		</div>
+			<h3>Filler Content</h3>
+			<p>Lebowski ipsum yes sir. It is our most modestly priced receptacle. Dolor sit amet, consectetur adipiscing elit praesent. Now this story I'm about to unfold took place back in the early nineties —just about the time of our conflict with Sad'm and the Eye-rackies. I only mention it 'cause some- times there's a man—I won't say a hee-ro, 'cause what's a hee-ro?—but sometimes there's a man. Ac magna justo pellentesque ac lectus quis elit blandit fringilla a.</p>
+
+			<p>We've got a man down, Dude. Ut turpis praesent felis ligula, malesuada suscipit malesuada non, ultrices non urna sed. That had not occurred to us, Dude. Orci ipsum, placerat id condimentum rutrum, rhoncus ac lorem aliquam. Is this yours, Larry? Is this your homework, Larry? Placerat posuere neque, at dignissim magna ullamcorper in aliquam sagittis massa. And let's also not forget—let's not forget, Dude—that keeping wildlife, an amphibious rodent, for domestic, you know, within the city —that isn't legal either. Ac tortor ultrices faucibus curabitur eu mi sapien, ut ultricies ipsum.</p>
+
+			<p>I'll get you a toe by this afternoon —with nail polish. Morbi eget risus nulla nullam vel. I'm not Mr. Lebowski; you're Mr. Lebowski. I'm the Dude. Nisi enim, vel auctor ante morbi id urna vel felis lacinia placerat. You know, little of this, little of that. Vestibulum turpis nulla, viverra nec volutpat ac, ornare id lectus cras. Jesus, man, can you change the station? Pharetra faucibus tristique nullam non accumsan justo nulla facilisi integer interdum elementum.</p>
+
+			<p>Leads, yeah. I'll just check with the boys down at the Crime Lab. They've assigned four more detectives to the case, got us working in shifts. Nulla, nec eleifend nisl euismod ac maecenas. Regrettably, it's true, standards have fallen in adult entertainment. It's video, Dude. Vitae eros velit, eu suscipit erat integer purus lacus, pretium vel venenatis eu. This Chinaman is not the issue! Volutpat non erat donec a metus ac eros dictum aliquet nulla consectetur egestas.</p>
+
+			<p>Ja, und maybe vee stamp on it und skvush it, Lebowski! Placerat maecenas pulvinar nisl et nisl rhoncus at volutpat felis blandit in libero. Strong men also cry… Strong men also cry. Turpis, laoreet et molestie sed, volutpat et erat nulla ut. That guy treats objects like women, man. Orci quis neque consectetur tincidunt aliquam erat volutpat donec aliquam. Sir, this is a mortuary, not a rental house. Orci eget mi lobortis sed tincidunt.</p>
+
+			<p>Lebowski ipsum yes sir. It is our most modestly priced receptacle. Dolor sit amet, consectetur adipiscing elit praesent. Now this story I'm about to unfold took place back in the early nineties —just about the time of our conflict with Sad'm and the Eye-rackies. I only mention it 'cause some- times there's a man—I won't say a hee-ro, 'cause what's a hee-ro?—but sometimes there's a man. Ac magna justo pellentesque ac lectus quis elit blandit fringilla a.</p>
+
+			<p>We've got a man down, Dude. Ut turpis praesent felis ligula, malesuada suscipit malesuada non, ultrices non urna sed. That had not occurred to us, Dude. Orci ipsum, placerat id condimentum rutrum, rhoncus ac lorem aliquam. Is this yours, Larry? Is this your homework, Larry? Placerat posuere neque, at dignissim magna ullamcorper in aliquam sagittis massa. And let's also not forget—let's not forget, Dude—that keeping wildlife, an amphibious rodent, for domestic, you know, within the city —that isn't legal either. Ac tortor ultrices faucibus curabitur eu mi sapien, ut ultricies ipsum.</p>
+
+			<p>I'll get you a toe by this afternoon —with nail polish. Morbi eget risus nulla nullam vel. I'm not Mr. Lebowski; you're Mr. Lebowski. I'm the Dude. Nisi enim, vel auctor ante morbi id urna vel felis lacinia placerat. You know, little of this, little of that. Vestibulum turpis nulla, viverra nec volutpat ac, ornare id lectus cras. Jesus, man, can you change the station? Pharetra faucibus tristique nullam non accumsan justo nulla facilisi integer interdum elementum.</p>
+
+			<p>Leads, yeah. I'll just check with the boys down at the Crime Lab. They've assigned four more detectives to the case, got us working in shifts. Nulla, nec eleifend nisl euismod ac maecenas. Regrettably, it's true, standards have fallen in adult entertainment. It's video, Dude. Vitae eros velit, eu suscipit erat integer purus lacus, pretium vel venenatis eu. This Chinaman is not the issue! Volutpat non erat donec a metus ac eros dictum aliquet nulla consectetur egestas.</p>
+
+			<p>Ja, und maybe vee stamp on it und skvush it, Lebowski! Placerat maecenas pulvinar nisl et nisl rhoncus at volutpat felis blandit in libero. Strong men also cry… Strong men also cry. Turpis, laoreet et molestie sed, volutpat et erat nulla ut. That guy treats objects like women, man. Orci quis neque consectetur tincidunt aliquam erat volutpat donec aliquam. Sir, this is a mortuary, not a rental house. Orci eget mi lobortis sed tincidunt.</p>
 	</div>
 </div>
 <footer class="row">
