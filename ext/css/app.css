@@ -16,6 +16,9 @@
 	.gbanner {
 		display: none;
 	}
+  header .button {
+    display: none;
+  }
 }
 header {
   background-image: linear-gradient(left bottom, rgb(137,204,224) 50%, rgb(43,166,203) 86%);

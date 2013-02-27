@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="ext/css/app.css?v=<?php echo date('his'); ?>" />
 
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.js" type="text/javascript"></script>
+	<script src="ext/js/jquery.fittext.js" type="text/javascript"></script>
 	<script src="ext/js/modernizr.foundation.js"></script>
 
 	<!--
@@ -43,9 +44,12 @@
 <header class="row nav">
 	<div class="twelve columns">
 		<div>
-			<h1>Team Tyro</h1>
+			<h1 class="title">Team Tyro</h1>
 			<h5>A <a href="https://sites.google.com/a/pvlearners.net/crest-engineering/home/stem-collaborative---howardell">CREST STEM</a> Collaborative Team</h5>
 			<a href="#" class="large secondary round button animated bounce" id="play_button">Play the game</a>
+			<script type="text/javascript">
+	        	$(".title").fitText(1.0, {maxFontSize: '88px', minFontSize: '50px' });
+	      	</script>
 		</div>
 	</div>
 </header>
