@@ -1,6 +1,6 @@
 <?php
 
-    include("/secure/data_db_settings.php");
+    include("/home/c0smic/secure/data_db_settings.php");
 
     # Read GET variables
     $stime = $_POST['stime'];
