@@ -1,22 +1,18 @@
 <?php
-    # Database variables
-    $dbhost = 'localhost:3036';
-    $dbuser = 'c0smic_tyro';
-    $dbpass = '2$M*k^4!?oDm';
+
+    include("/secure/data_db_settings.php");
 
     # Read GET variables
     $stime = $_POST['stime'];
     $etime = $_POST['etime'];
     $moves = $_POST['moves'];
 
-    # Create output string
-    $str = "$stime, $etime, \"$moves\"";
-
-    $conn = mysql_connect($dbhost, $dbuser, $dbpass);
+    $conn = mysql_connect('localhost:3036', $dbuser, $dbpass);
     if(! $conn )
     {
         die('Could not connect: ' . mysql_error());
     }
+    unset($dbuser, $dbpass);
 
     mysql_select_db('c0smic_maze-game');
 
