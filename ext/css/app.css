@@ -56,18 +56,37 @@ header .twelve {
   height: 20px;
 }
 footer {
-
+  height: 1000px;
 }
 
 /* -----------------------------------------
    Home Page
 ----------------------------------------- */
-.call {
-	text-align: center;
+.content section {
+  padding-top: 35px;
+}
+.section_head h1 {
+  font-size: 36px;
+  line-height: 40px;
+}
+.section_head {
+  padding-bottom: 9px;
+  margin: 20px 0 30px;
+  border-bottom: 1px solid #eee;
+}
+.intro {
+  margin-bottom: 20px;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 30px;
 }
 
 /* -----------------------------------------
    Page Name 2
 ----------------------------------------- */
-
+.nav-bar-fixed {
+  left: auto;
+  position: fixed;
+  top: 75px;
+}
 
