@@ -58,6 +58,12 @@ header .twelve {
 footer {
   height: 1000px;
 }
+::selection {
+  background: rgb(0, 188, 204);
+}
+::-moz-selection {
+  background: rgb(0, 188, 204);
+}
 
 /* -----------------------------------------
    Home Page
