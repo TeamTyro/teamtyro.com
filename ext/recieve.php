@@ -6,9 +6,9 @@
     $xml = simplexml_load_string($body);
 
     # Read GET variables
-    $stime = $xml->stime;
-    $etime = $xml->etime;
-    $moves = $xml->moves;
+    $stime = $xml->test->stime;
+    $etime = $xml->test->etime;
+    $moves = $xml->test->moves;
 
     $conn = mysql_connect('localhost:3036', $dbuser, $dbpass);
     if(! $conn )
