@@ -2,8 +2,8 @@
 
     include("/home/c0smic/secure/data_db_settings.php");
 
-    $body = file_get_contents('php://input');
-    $xml = simplexml_load_file($body);
+    //$body = file_get_contents('php://input');
+    $xml = simplexml_load_file('php://input');
 
     # Read GET variables
     $stime = $xml->data->stime;
