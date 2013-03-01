@@ -2,13 +2,31 @@
 
     include("/home/c0smic/secure/data_db_settings.php");
 
-    //$body = file_get_contents('php://input');
-    $xml = simplexml_load_file('php://input');
+    $body = file_get_contents('php://input');
 
-    # Read GET variables
-    $stime = $xml->data->stime;
-    $etime = $xml->data->etime;
-    $moves = $xml->data->moves;
+    $stime;
+    $etime;
+    $moves;
+
+    function parseData($body) {
+        $inc = 0;
+        while(substr($body, $inc) != '|') {
+            $stime = $stime . substr($body, $inc);
+            inc++;
+        }
+
+        inc++;
+        while(substr($body, $inc) != '|') {
+            $etime = $etime . substr($body, $inc);
+            inc++;
+        }
+
+        inc++;
+        while(substr($body, $inc) != '|') {
+            $moves = $moves . substr($body, $inc);
+        }
+    }
+    parseData($body);
 
     $conn = mysql_connect('localhost:3036', $dbuser, $dbpass);
     if(! $conn )
