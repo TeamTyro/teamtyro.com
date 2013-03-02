@@ -4,13 +4,14 @@
 
     $body = file_get_contents('php://input');
 
-    $stime;
-    $etime;
-    $moves;
+    $stime = "";
+    $etime = "";
+    $moves = "";
 
     $splitter = substr($body, 0);
 
     function parseData($body) {
+        global $stime, $etime, $moves;
         $inc = 1;
         while(substr($body, $inc) != $splitter) {
             $stime = $stime . substr($body, $inc);
