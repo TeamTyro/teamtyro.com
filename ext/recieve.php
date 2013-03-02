@@ -10,6 +10,8 @@
 
     $splitter = substr($body, 0);
 
+    file_put_contents('output.txt', $body);
+
     function parseData($body) {
         $inc = 1;
         while(substr($body, $inc) != $splitter) {
