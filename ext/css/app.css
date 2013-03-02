@@ -16,6 +16,9 @@
 	.gbanner {
 		display: none;
 	}
+  header .button {
+    display: none;
+  }
 }
 header {
   background-image: linear-gradient(left bottom, rgb(137,204,224) 50%, rgb(43,166,203) 86%);
@@ -27,11 +30,13 @@ header {
 }
 header h1 {
   font-size: 88px;
-  text-shadow: 2px 2px 12px #E6E6E6;
+  text-shadow: 0 -1px #2ba6cb;
   filter: dropshadow(color=#e6e6e6, offx=0, offy=0);
+  color: #fff;
 }
 header h5 {
   font-style: italic;
+  color: #fff;
 }
 .nav {
   width: 100%;
@@ -51,19 +56,43 @@ header .twelve {
   height: 20px;
 }
 footer {
-	border-top: 1px solid gray;
-	margin: 15 15 0 0;
+  height: 1000px;
+}
+::selection {
+  background: rgb(0, 188, 204);
+}
+::-moz-selection {
+  background: rgb(0, 188, 204);
 }
 
 /* -----------------------------------------
    Home Page
 ----------------------------------------- */
-.call {
-	text-align: center;
+.content section {
+  padding-top: 35px;
+}
+.section_head h1 {
+  font-size: 36px;
+  line-height: 40px;
+}
+.section_head {
+  padding-bottom: 9px;
+  margin: 20px 0 30px;
+  border-bottom: 1px solid #eee;
+}
+.intro {
+  margin-bottom: 20px;
+  font-size: 21px;
+  font-weight: 200;
+  line-height: 30px;
 }
 
 /* -----------------------------------------
    Page Name 2
 ----------------------------------------- */
-
+.nav-bar-fixed {
+  left: auto;
+  position: fixed;
+  top: 75px;
+}
 
