@@ -10,8 +10,6 @@
 
     $splitter = substr($body, 0);
 
-    file_put_contents('output.txt', $body);
-
     function parseData($body) {
         $inc = 1;
         while(substr($body, $inc) != $splitter) {
@@ -31,6 +29,9 @@
         }
     }
     parseData($body);
+
+    $vars = $stime . " " . $etime .  " " . $moves;
+    file_put_contents('output.txt', $vars);
 
     $conn = mysql_connect('localhost:3036', $dbuser, $dbpass);
     if(! $conn )
