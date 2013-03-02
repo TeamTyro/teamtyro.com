@@ -8,21 +8,23 @@
     $etime;
     $moves;
 
+    $splitter = substr($body, 0);
+
     function parseData($body) {
         $inc = 0;
-        while(substr($body, $inc) != '|') {
+        while(substr($body, $inc) != $splitter) {
             $stime = $stime . substr($body, $inc);
             $inc++;
         }
 
         $inc++;
-        while(substr($body, $inc) != '|') {
+        while(substr($body, $inc) != $splitter) {
             $etime = $etime . substr($body, $inc);
             $inc++;
         }
 
         $inc++;
-        while(substr($body, $inc) != '|') {
+        while(substr($body, $inc) != $splitter) {
             $moves = $moves . substr($body, $inc);
         }
     }
