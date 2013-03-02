@@ -12,16 +12,16 @@
         $inc = 0;
         while(substr($body, $inc) != '|') {
             $stime = $stime . substr($body, $inc);
-            inc++;
+            $inc++;
         }
 
-        inc++;
+        $inc++;
         while(substr($body, $inc) != '|') {
             $etime = $etime . substr($body, $inc);
-            inc++;
+            $inc++;
         }
 
-        inc++;
+        $inc++;
         while(substr($body, $inc) != '|') {
             $moves = $moves . substr($body, $inc);
         }
