@@ -11,7 +11,7 @@
     $splitter = substr($body, 0);
 
     function parseData($body) {
-        $inc = 0;
+        $inc = 1;
         while(substr($body, $inc) != $splitter) {
             $stime = $stime . substr($body, $inc);
             $inc++;
