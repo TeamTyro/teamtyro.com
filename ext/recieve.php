@@ -8,7 +8,7 @@
     $etime = "";
     $moves = "";
 
-    $splitter = "|";
+    $splitter = '|';
 
     function parseData($body) {
         global $stime, $etime, $moves;
