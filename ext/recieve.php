@@ -11,7 +11,7 @@
     $splitter = '|';
 
     function parseData($body) {
-        global $stime, $etime, $moves;
+        global $stime, $etime, $moves, $splitter;
         $inc = 1;
         while(strcmp(substr($body, $inc, 1), $splitter) > 0) {
             $stime = $stime . substr($body, $inc, 1);
