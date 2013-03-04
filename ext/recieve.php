@@ -11,7 +11,7 @@
     $splitter = substr($body, 0);
 
     function parseData($body) {
-        global $stime, $etime, $moves;
+        //global $stime, $etime, $moves;
         $inc = 1;
         while(substr($body, $inc) != $splitter) {
             $stime = $stime . substr($body, $inc);
@@ -32,7 +32,7 @@
     parseData($body);
 
     $vars = $stime . " " . $etime .  " " . $moves;
-    file_put_contents('output.txt', $vars);
+    file_put_contents('output.txt', $splitter);
 
     $conn = mysql_connect('localhost:3036', $dbuser, $dbpass);
     if(! $conn )
