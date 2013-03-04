@@ -8,10 +8,10 @@
     $etime = "";
     $moves = "";
 
-    $splitter = substr($body, 0);
+    $splitter = "|";
 
     function parseData($body) {
-        //global $stime, $etime, $moves;
+        global $stime, $etime, $moves;
         $inc = 1;
         while(substr($body, $inc) != $splitter) {
             $stime = $stime . substr($body, $inc);
