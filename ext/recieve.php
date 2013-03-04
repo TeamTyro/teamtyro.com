@@ -13,20 +13,20 @@
     function parseData($body) {
         global $stime, $etime, $moves;
         $inc = 1;
-        while(substr($body, $inc) != $splitter) {
-            $stime = $stime . substr($body, $inc);
+        while(substr($body, $inc, 1) != $splitter) {
+            $stime = $stime . substr($body, $inc, 1);
             $inc++;
         }
 
         $inc++;
-        while(substr($body, $inc) != $splitter) {
-            $etime = $etime . substr($body, $inc);
+        while(substr($body, $inc, 1) != $splitter) {
+            $etime = $etime . substr($body, $inc, 1);
             $inc++;
         }
 
         $inc++;
-        while(substr($body, $inc) != $splitter) {
-            $moves = $moves . substr($body, $inc);
+        while(substr($body, $inc, 1) != $splitter) {
+            $moves = $moves . substr($body, $inc, 1);
         }
     }
     parseData($body);
