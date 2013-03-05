@@ -9,24 +9,16 @@
     $moves = "";
 
     function parseData($body) {
-        $splitter = '|';
+        $splitter = substr($body, 0, 1);
         global $stime, $etime, $moves;
-        $inc = 1;
-        while(strcmp(substr($body, $inc, 1), $splitter) > 0) {
-            $stime = $stime . substr($body, $inc, 1);
-            $inc++;
-        }
 
-        $inc++;
-        while(strcmp(substr($body, $inc, 1), $splitter) > 0) {
-            $etime = $etime . substr($body, $inc, 1);
-            $inc++;
-        }
+        $mark1 = strpos($body, $splitter, 1);
+        $mark2 = strpos($body, $splitter, $mark1+1);
+        $mark3 = strpos($body, $splitter, $mark2+1);
 
-        $inc++;
-        while(strcmp(substr($body, $inc, 1), $splitter) > 0) {
-            $moves = $moves . substr($body, $inc, 1);
-        }
+        $stime = substr($body, 1, $mark1-1);
+        $etime = substr($body, $mark1+1, $mark2-$mark1-1);
+        $moves = substr($body, $mark2+1, $mark3-$mark2-1);
     }
     parseData($body);
 
