@@ -8,31 +8,19 @@
     $etime = "";
     $moves = "";
 
-    $splitter = substr($body, 0);
-
     function parseData($body) {
+        $splitter = substr($body, 0, 1);
         global $stime, $etime, $moves;
-        $inc = 1;
-        while(substr($body, $inc) != $splitter) {
-            $stime = $stime . substr($body, $inc);
-            $inc++;
-        }
 
-        $inc++;
-        while(substr($body, $inc) != $splitter) {
-            $etime = $etime . substr($body, $inc);
-            $inc++;
-        }
+        $mark1 = strpos($body, $splitter, 1);
+        $mark2 = strpos($body, $splitter, $mark1+1);
+        $mark3 = strpos($body, $splitter, $mark2+1);
 
-        $inc++;
-        while(substr($body, $inc) != $splitter) {
-            $moves = $moves . substr($body, $inc);
-        }
+        $stime = substr($body, 1, $mark1-1);
+        $etime = substr($body, $mark1+1, $mark2-$mark1-1);
+        $moves = substr($body, $mark2+1, $mark3-$mark2-1);
     }
     parseData($body);
-
-    $vars = $stime . " " . $etime .  " " . $moves;
-    file_put_contents('output.txt', $vars);
 
     $conn = mysql_connect('localhost:3036', $dbuser, $dbpass);
     if(! $conn )
