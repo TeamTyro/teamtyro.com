@@ -40,13 +40,15 @@ header h5 {
 }
 .nav {
   width: 100%;
+  max-width: 100%;
+  max-width: 100%;
   text-align: center;
 }
 header .twelve {
   margin: 35px 0 35px;
 }
 .wrapper {
-  background: #222;
+  background: #111;
   min-height: 45px;
   line-height: 45px;
   margin: 0 0 30px 0;
