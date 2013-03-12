@@ -19,6 +19,12 @@
   header .button {
     display: none;
   }
+  header h5 {
+    margin-top: -2em !important;
+  }
+  .side-nav {
+    display: none;
+  }
 }
 header {
   background-image: linear-gradient(left bottom, rgb(137,204,224) 50%, rgb(43,166,203) 86%);
@@ -37,32 +43,49 @@ header h1 {
 header h5 {
   font-style: italic;
   color: #fff;
+  margin-top: -2.75em;
+  margin-bottom: 3em;
 }
 .nav {
   width: 100%;
+  max-width: 100%;
   text-align: center;
+}
+.side-nav.sticky{
+  left: auto;
+  top: 50px;
+  margin-top: 45px;
+}
+.side-nav {
+  z-index: 97;
+}
+.side-nav li a {
+  margin: 0 0 -1px;
+  padding: 8px 14px;
+  border-left: 4px solid #E5E5E5;
+}
+.side-nav > li > a.active {
+  border-left: 4px solid #A8A8A8;
 }
 header .twelve {
   margin: 35px 0 35px;
 }
 .wrapper {
-  background: #222;
+  background: #111;
   min-height: 45px;
-  line-height: 45px;
-  margin: 0 0 30px 0;
-  padding: 0;
   width: 100%;
-  position: relative;
-  height: 20px;
 }
 footer {
-  height: 1000px;
+  max-width: 100%;
+  margin-top: 70px !important;
+  padding: 70px 0;
+  background: #E7E7E7;
 }
 ::selection {
-  background: rgb(0, 188, 204);
+  background: #585858;
 }
 ::-moz-selection {
-  background: rgb(0, 188, 204);
+  background: #585858;
 }
 
 /* -----------------------------------------
