@@ -75,6 +75,12 @@ header .twelve {
   min-height: 45px;
   width: 100%;
 }
+footer {
+  max-width: 100%;
+  margin-top: 70px !important;
+  padding: 70px 0;
+  background: #E7E7E7;
+}
 ::selection {
   background: #585858;
 }
