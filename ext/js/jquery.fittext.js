@@ -11,8 +11,9 @@
 
 (function( $ ){
 
-  $.extend($.fn.fitText = function( kompressor, options ) {
+  $.fn.fitText = function( kompressor, options ) {
 
+    // Setup options
     var compressor = kompressor || 1,
         settings = $.extend({
           'minFontSize' : Number.NEGATIVE_INFINITY,
@@ -32,10 +33,11 @@
       // Call once to set.
       resizer();
 
+      // Call on resize. Opera debounces their resize by default.
       $(window).on('resize', resizer);
 
     });
 
-  });
+  };
 
-})(window.Zepto);
+})( jQuery );
