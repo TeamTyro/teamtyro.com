@@ -29,7 +29,7 @@ header {
   background-image: -webkit-gradient(  linear,  left bottom,  right top,  color-stop(0.5, rgb(137,204,224)),  color-stop(0.86, rgb(43,166,203)) );
 }
 header h1 {
-  font-size: 88px;
+  font-size: 5.5em;
   text-shadow: 0 -1px #2ba6cb;
   filter: dropshadow(color=#e6e6e6, offx=0, offy=0);
   color: #fff;
@@ -37,6 +37,8 @@ header h1 {
 header h5 {
   font-style: italic;
   color: #fff;
+  margin-top: -2.75em;
+  margin-bottom: 3em;
 }
 .nav {
   width: 100%;
@@ -44,18 +46,26 @@ header h5 {
   max-width: 100%;
   text-align: center;
 }
+.side-nav.sticky{
+  left: auto;
+  top: 50px;
+  margin-top: 45px;
+}
+.side-nav li a {
+  margin: 0 0 -1px;
+  padding: 8px 14px;
+  border-left: 4px solid #E5E5E5;
+}
+.side-nav > li > a.active {
+  border-left: 4px solid #A8A8A8;
+}
 header .twelve {
   margin: 35px 0 35px;
 }
 .wrapper {
   background: #111;
   min-height: 45px;
-  line-height: 45px;
-  margin: 0 0 30px 0;
-  padding: 0;
   width: 100%;
-  position: relative;
-  height: 20px;
 }
 footer {
   height: 1000px;

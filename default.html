@@ -26,8 +26,14 @@
 	<link rel="stylesheet" href="ext/css/normalize.css" />
 	<link rel="stylesheet" href="ext/css/app.css" />
 
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.js"</script>
 	<script src="ext/js/jquery.fittext.js" type="text/javascript"></script>
+	<script src="ext/js/custom.sidenav.js"></script>
 	<script src="ext/js/custom.modernizr.js"></script>
+
+	<script>
+
+	</script>
 
 	<!-- IE Fix for HTML5 Tags -->
 	<!--[if lt IE 9]>
@@ -37,7 +43,7 @@
 </head>
 <body>
 <header class="row nav">
-	<div class="large-twelve columns">
+	<div class="large-12 columns">
 		<div>
 			<h1 id="title">Team Tyro</h1>
 			<h5>A <a href="https://sites.google.com/a/pvlearners.net/crest-engineering/home/stem-collaborative---howardell">CREST STEM</a> Collaborative Team</h5>
@@ -48,8 +54,8 @@
 		</div>
 	</div>
 </header>
-<div class="wrapper">
-	<div class="row contain-to-grid sticky">
+<div class="wrapper sticky">
+	<div class="12-columns contain-to-grid sticky">
 		<nav class="top-bar">
 			<ul class="title-area">
 				<li class="name">
@@ -72,10 +78,17 @@
 	</div>
 </div>
 <div class="row">
-	<div class="large-three columns">
-
+	<div class="large-3 columns">
+		<ul class="side-nav sticky">
+			<li>
+				<a href="#about" class="active">About</a>
+				<a href="#design">Design</a>
+				<a href="#links">Links</a>
+				<a href="#thanks">Thanks</a>
+			</li>
+		</ul>
 	</div>
-	<div class="nine columns content">
+	<div class="large-9 columns content">
 		<section id="about">
 			<div class="section_head">
 				<h1>About</h1>
@@ -107,17 +120,12 @@
 	</div>
 </div>
 <footer class="row">
-	<div class="large-twelve columns">
+	<div class="large-12 columns">
 	</div>
 </footer>
 
 <a href="http://github.com/teamtyro" target="_blank" class="gbanner"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
 
-	<script>
-		document.write('<script src=' +
-		('__proto__' in {} ? 'ext/js/zepto' : 'http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery') +
-		'.js><\/script>')
-	</script>
 	<script src="ext/js/foundation.min.js"></script>
 	<script>
 		$(document).foundation();
