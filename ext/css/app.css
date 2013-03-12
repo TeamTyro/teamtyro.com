@@ -76,10 +76,10 @@ header .twelve {
   width: 100%;
 }
 ::selection {
-  background: rgb(0, 188, 204);
+  background: #585858;
 }
 ::-moz-selection {
-  background: rgb(0, 188, 204);
+  background: #585858;
 }
 
 /* -----------------------------------------
