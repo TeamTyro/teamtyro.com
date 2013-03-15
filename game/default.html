@@ -41,15 +41,21 @@
         <nav class="top-bar">
             <ul class="title-area">
                 <li class="name">
-                    <h1><a href="">Team Tyro</a></h1>
+                    <h1><a href="/">Team Tyro</a></h1>
                 </li>
                 <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
             </ul>
             <section class="top-bar-section">
                 <ul class="left">
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Neural Network</a></li>
-                    <li><a href="#">Genetic Algorithm</a></li>
+                    <li>
+                        <a href="#">The Team</a>
+                    </li>
+                    <li>
+                        <span data-tooltip class="has-tip tip-top" title="Coming soon, watch the AI play the game!"><a href="#">Neural Network</a></span>
+                    </li>
+                    <li>
+                        <span data-tooltip class="has-tip tip-top" title="Coming soon, watch the AI play the game!"><a href="#">Genetic Algorithm</a></span>
+                    </li>
                 </ul>
                 <ul class="right">
                     <li><a href="#">Contact</a></li>
@@ -59,26 +65,28 @@
         </nav>
     </div>
 </div>
-<div class="row">
-    <applet code="org.lwjgl.util.applet.AppletLoader" archive="lwjgl_util_applet.jar" codebase="." width="600" height="600">
+<div class="row game">
+    <div class="large-12 columns">
+        <applet class="large-centered"code="org.lwjgl.util.applet.AppletLoader" archive="lwjgl_util_applet.jar" codebase="." width="600" height="600">
 
-        <!-- The following tags are mandatory -->
+            <!-- The following tags are mandatory -->
 
-        <!-- Name of Applet, will be used as name of directory it is saved in, and will uniquely identify it in cache -->
-        <param name="al_title" value="testgame">
+            <!-- Name of Applet, will be used as name of directory it is saved in, and will uniquely identify it in cache -->
+            <param name="al_title" value="testgame">
 
-        <!-- The main class of the applet -->
-        <param name="al_main" value="MazeGame">
+            <!-- The main class of the applet -->
+            <param name="al_main" value="MazeGame">
 
-        <!-- The jars to be included in the Java Classpath -->
-        <param name="al_jars" value="colormazegame.jar, lwjgl.jar, jinput.jar, lwjgl_util.jar">
+            <!-- The jars to be included in the Java Classpath -->
+            <param name="al_jars" value="colormazegame.jar, lwjgl.jar, jinput.jar, lwjgl_util.jar">
 
-        <!-- Specifies the natives for each platform -->
-        <param name="al_windows" value="windows_natives.jar">
-        <param name="al_linux" value="linux_natives.jar">
-        <param name="al_mac" value="macosx_natives.jar">
+            <!-- Specifies the natives for each platform -->
+            <param name="al_windows" value="windows_natives.jar">
+            <param name="al_linux" value="linux_natives.jar">
+            <param name="al_mac" value="macosx_natives.jar">
 
-    </applet>
+        </applet>
+    </div>
 </div>
 <footer>
     <div class="row">
@@ -96,7 +104,7 @@
     </div>
 </footer>
 
-<a href="http://github.com/teamtyro" target="_blank" class="gbanner"><img style="position: absolute; top: 0; right: 0; border: 0;" src="/ext/img/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+<a href="http://github.com/teamtyro/color-maze-game" target="_blank" class="gbanner"><img style="position: absolute; top: 45px; right: 0; border: 0;" src="/ext/img/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
 
     <script src="/ext/js/foundation.min.js"></script>
     <script>

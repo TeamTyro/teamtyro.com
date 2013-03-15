@@ -78,11 +78,23 @@ header .twelve {
   min-height: 45px;
   width: 100%;
 }
+.top-bar-section ul li span > a {
+  display: block;
+  width: 100%;
+  padding: 12px 0 12px 15px;
+  color: #fff;
+  font-size: 0.8125em;
+  font-weight: bold;
+  background: #333;
+}
 footer {
   max-width: 100%;
   margin-top: 70px !important;
   padding: 70px 0;
   background: #E7E7E7;
+}
+.gbanner img {
+  z-index: 97;
 }
 ::selection {
   background: #585858;
@@ -120,5 +132,8 @@ footer {
   left: auto;
   position: fixed;
   top: 75px;
+}
+.game {
+  margin-top: 70px;
 }
 
