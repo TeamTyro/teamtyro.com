@@ -25,6 +25,9 @@
   .side-nav {
     display: none;
   }
+  #title {
+    font-size: 50px !important;
+  }
 }
 header {
   background-image: linear-gradient(left bottom, rgb(137,204,224) 50%, rgb(43,166,203) 86%);
