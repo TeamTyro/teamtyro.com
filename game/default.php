@@ -1,3 +1,12 @@
+<?php
+$revisit = false;
+if(isset($_COOKIE['div'])){
+$revisit = true;
+} else {
+setcookie('div', true, 5184000 + time()); //hold fo 2 months
+$revisit = false;
+}
+?>
 <!DOCTYPE HTML>
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
@@ -91,6 +100,13 @@
                 <p>This game requires <a href="http://www.java.com/en/download/index.jsp">Java</a> to play. <br/>
                 <em>Not available on mobile devices, mouse and keyboard are required to play.</em></p>
             </div>
+            <?php
+            if($revisit){
+            echo "<div>You've been here</div>";
+            } else {
+            echo "<div>Its your first time!</div>";
+            }
+            ?>
         </div>
     </div>
     <div class="large-5 columns">
