@@ -1,11 +1,15 @@
 <?php
-$revisit = false;
-if(isset($_COOKIE['div'])){
-$revisit = true;
-} else {
-setcookie('div', true, 5184000 + time()); //hold fo 2 months
-$revisit = false;
-}
+    $revisit = false;
+    if(isset($_COOKIE['TeamTyro_Survey'])){
+        $revisit = true;
+    } else {
+        setcookie('TeamTyro_Survey', false, 5184000 + time());
+        $revisit = false;
+    }
+
+    wp_enqueue_script( 'dynLoad', 'dynLoad.js' );
+
+    wp_localize_script( 'dynLoad', 'TeamTyro_Survey', $revisit );
 ?>
 <!DOCTYPE HTML>
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
@@ -37,6 +41,7 @@ $revisit = false;
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/ext/js/jquery-1.9.0.min.js"><\/script>')</script>
     <script src="/ext/js/custom.modernizr.js"></script>
+    <script src="dynLoad.js"></script>
 
     <!-- IE Fix for HTML5 Tags -->
     <!--[if lt IE 9]>
@@ -74,58 +79,8 @@ $revisit = false;
         </nav>
     </div>
 </div>
-<div class="row game">
-    <div class="large-7 columns">
-        <applet class="large-centered"code="org.lwjgl.util.applet.AppletLoader" archive="lwjgl_util_applet.jar" codebase="." width="600" height="600">
+<div class="row content_load">
 
-            <!-- The following tags are mandatory -->
-
-            <!-- Name of Applet, will be used as name of directory it is saved in, and will uniquely identify it in cache -->
-            <param name="al_title" value="testgame">
-
-            <!-- The main class of the applet -->
-            <param name="al_main" value="MazeGame">
-
-            <!-- The jars to be included in the Java Classpath -->
-            <param name="al_jars" value="colormazegame.jar, lwjgl.jar, jinput.jar, lwjgl_util.jar">
-
-            <!-- Specifies the natives for each platform -->
-            <param name="al_windows" value="windows_natives.jar">
-            <param name="al_linux" value="linux_natives.jar">
-            <param name="al_mac" value="macosx_natives.jar">
-
-        </applet>
-        <div class="row">
-            <div class="large-7 columns text-center">
-                <p>This game requires <a href="http://www.java.com/en/download/index.jsp">Java</a> to play. <br/>
-                <em>Not available on mobile devices, mouse and keyboard are required to play.</em></p>
-            </div>
-            <?php
-            if($revisit){
-            echo "<div>You've been here</div>";
-            } else {
-            echo "<div>Its your first time!</div>";
-            }
-            ?>
-        </div>
-    </div>
-    <div class="large-5 columns">
-        <h3>Color Maze Game</h3>
-        <div class="social">
-            <iframe src="http://ghbtns.com/github-btn.html?user=teamtyro&repo=color-maze-game&type=watch&count=true"
-  allowtransparency="true" frameborder="0" scrolling="0" width="90" height="20"></iframe>
-            <iframe src="http://ghbtns.com/github-btn.html?user=teamtyro&repo=color-maze-game&type=fork&count=true"
-  allowtransparency="true" frameborder="0" scrolling="0" width="95" height="20"></iframe>
-        </div>
-        <h4 class="subheader">How to play:</h4>
-        <p>
-            To collect the best data on how the human brain learns, we must simulate an environment in which the player has <em>no pre-recognitions</em> on how to solve the presented game.  This way, the player has to learn in a similar way to the artificial intelligence: with no prior knowledge of how to complete the game.  So go ahead, it's up to you to learn how to play the game!
-        </p>
-        <h4 class="subheader">Controls:</h4>
-        <p>
-            Click on the game window to play, then use arrow keys to move <kbd>up</kbd>, <kbd>down</kbd>, <kbd>left</kbd> and <kbd>right</kbd>.
-        </p>
-    </div>
 </div>
 <footer>
     <div class="row">
