@@ -17,14 +17,14 @@
         <legend>Player Survey</legend>
 
         <div class="row">
-            <div class="large-12 columns">
+            <div class="large-6 columns">
                 <label>Name</label>
                 <input type="text" name="name" maxlength="70" autocomplete="off" autofocus>
             </div>
         </div>
 
         <div class="row">
-            <div class="large-4 columns">
+            <div class="large-6 columns">
                 <label>Email</label>
                 <input type="email" name="email" maxlength="50">
             </div>
@@ -48,7 +48,7 @@
         </div>
 
         <div class="row">
-            <div class="large-4 columns">
+            <div class="large-4 columns submit-button">
                 <input class="nice blue radius button" type="submit" name="Submit" value="Submit">
             </div>
         </div>
