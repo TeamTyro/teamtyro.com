@@ -100,10 +100,10 @@ footer {
   z-index: 97;
 }
 ::selection {
-  background: #585858;
+  background: rgb(61, 190, 231);
 }
 ::-moz-selection {
-  background: #585858;
+  background: rgb(61, 190, 231);
 }
 
 /* -----------------------------------------
@@ -129,14 +129,14 @@ footer {
 }
 
 /* -----------------------------------------
-   Page Name 2
+   Game Page
 ----------------------------------------- */
 .nav-bar-fixed {
   left: auto;
   position: fixed;
   top: 75px;
 }
-.game {
+.content_load {
   margin-top: 70px;
 }
 .game .large-7 {

@@ -1,15 +1,15 @@
 <?php
-    $revisit = false;
-    if(isset($_COOKIE['TeamTyro_Survey'])){
-        $revisit = true;
-    } else {
-        setcookie('TeamTyro_Survey', false, 5184000 + time());
-        $revisit = false;
-    }
 
-    wp_enqueue_script( 'dynLoad', 'dynLoad.js' );
+include("session_start.php");
 
-    wp_localize_script( 'dynLoad', 'TeamTyro_Survey', $revisit );
+ob_start();
+
+if(isset($_SESSION['name'])){
+    $name = $_SESSION['name'];
+    $email = $_SESSION['email'];
+    $age = $_SESSION['age'];
+}
+
 ?>
 <!DOCTYPE HTML>
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
@@ -41,7 +41,6 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/ext/js/jquery-1.9.0.min.js"><\/script>')</script>
     <script src="/ext/js/custom.modernizr.js"></script>
-    <script src="dynLoad.js"></script>
 
     <!-- IE Fix for HTML5 Tags -->
     <!--[if lt IE 9]>
@@ -80,7 +79,15 @@
     </div>
 </div>
 <div class="row content_load">
+<?php
 
+if(isset($_COOKIE['survey_complete'])){
+    include("colorgame.php");
+} else {
+    include("survey.php");
+}
+
+?>
 </div>
 <footer>
     <div class="row">
