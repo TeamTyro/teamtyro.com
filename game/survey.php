@@ -67,6 +67,11 @@ if (isset($_POST['Submit'])) {
     $_SESSION['age'] = $_POST['age'];
 
     setcookie('survey_complete', true, 5184000 + time());
+    setcookie('survey_name', $_POST['name'], 5184000 + time());
+    setcookie('survey_email', $_POST['email'], 5184000 + time());
+    setcookie('survey_age', $_POST['age'], 5184000 + time());
+
+    header('Location: '.$_SERVER['REQUEST_URI']);
 } 
 
 ?> 
