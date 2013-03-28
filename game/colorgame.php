@@ -4,6 +4,15 @@
             <!-- Detect if person has played before -->
             <param name="returning" value="">
 
+            <?php
+            if(isset($_COOKIE['name'])){
+                echo '<param name=\"name\" value=\"' + $name + '">';
+                echo '<param name=\"email\" value=\"' + $email + '">';
+                echo '<param name=\"gender\" value=\"' + $gender + '">';
+                echo '<param name=\"age\" value=\"' + $age + '">';
+            }
+            ?>
+
             <!-- The following tags are mandatory -->
 
             <!-- Name of Applet, will be used as name of directory it is saved in, and will uniquely identify it in cache -->
