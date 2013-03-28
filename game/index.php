@@ -38,7 +38,7 @@ if(isset($_COOKIE['name'])){
     <link rel="stylesheet" href="/ext/css/app.css?v=1.1" />
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/ext/js/jquery-1.9.0.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="/ext/js/jquery-1.9.1.min.js"><\/script>')</script>
     <script src="/ext/js/custom.modernizr.js"></script>
 
     <!-- IE Fix for HTML5 Tags -->
