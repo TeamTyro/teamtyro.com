@@ -33,9 +33,9 @@ if(isset($_COOKIE['name'])){
 
     <title>Play - Team Tyro</title>
 
-    <link rel="stylesheet" href="/ext/css/foundation.min.css?v=1.0" />
+    <link rel="stylesheet" href="/ext/css/foundation.min.css?v=1.1" />
     <link rel="stylesheet" href="/ext/css/normalize.css" />
-    <link rel="stylesheet" href="/ext/css/app.css?v=1.0" />
+    <link rel="stylesheet" href="/ext/css/app.css?v=1.1" />
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/ext/js/jquery-1.9.0.min.js"><\/script>')</script>
