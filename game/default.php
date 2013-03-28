@@ -1,13 +1,12 @@
 <?php
 
-include("session_start.php");
-
 ob_start();
 
-if(isset($_SESSION['name'])){
-    $name = $_SESSION['name'];
-    $email = $_SESSION['email'];
-    $age = $_SESSION['age'];
+if(isset($_COOKIE['name'])){
+    $name = $_COOKIE['survey_name'];
+    $email = $_COOKIE['survey_email'];
+    $gender = $_COOKIE['survey_gender'];
+    $age = $_COOKIE['survey_age'];
 }
 
 ?>

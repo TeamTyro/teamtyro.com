@@ -86,13 +86,7 @@
 
 <?php
 
-require_once("session_start.php");
-
 if (isset($_POST['Submit'])) { 
-    $_SESSION['name'] = $_POST['name'];
-    $_SESSION['email'] = $_POST['email'];
-    $_SESSION['gender'] = $_POST['gender'];
-    $_SESSION['age'] = $_POST['age'];
 
     setcookie('survey_complete', true, 5184000 + time());
     setcookie('survey_name', $_POST['name'], 5184000 + time());
