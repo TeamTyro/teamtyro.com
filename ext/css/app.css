@@ -29,6 +29,9 @@
     font-size: 50px !important;
   }
 }
+.callout {
+  padding-bottom: 80px;
+}
 header {
   background-image: linear-gradient(left bottom, rgb(137,204,224) 50%, rgb(43,166,203) 86%);
   background-image: -o-linear-gradient(left bottom, rgb(137,204,224) 50%, rgb(43,166,203) 86%);
@@ -38,19 +41,16 @@ header {
   background-image: -webkit-gradient(  linear,  left bottom,  right top,  color-stop(0.5, rgb(137,204,224)),  color-stop(0.86, rgb(43,166,203)) );
 }
 header h1 {
-  font-size: 88px;
+  font-size: 120px;
+  margin-bottom: 30px;
   text-shadow: 0 -1px #2ba6cb;
   filter: dropshadow(color=#e6e6e6, offx=0, offy=0);
   color: #fff;
 }
-header h5 {
-  font-style: italic;
-  color: #fff;
-  margin-top: -2.75em;
-  margin-bottom: 3em;
-}
 header h2 {
   color: #fff;
+  font-size: 40px;
+  font-weight: 200;
 }
 .nav {
   width: 100%;
