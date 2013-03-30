@@ -29,6 +29,16 @@
     font-size: 50px !important;
   }
 }
+@media only screen and (min-height: 800px) {
+  footer.sticky-bottom {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+  }
+}
+html, body {
+  height: 100%;
+}
 .callout {
   padding: 70px 0 80px 0;
 }

@@ -88,7 +88,7 @@ if(isset($_COOKIE['survey_complete'])){
 
 ?>
 </div>
-<footer>
+<footer class="sticky-bottom">
     <div class="row">
         <div class="large-10 columns">
             <p>Built by <a href="http://jackketcham.com">Jack Ketcham</a></p>
