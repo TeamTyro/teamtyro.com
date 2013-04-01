@@ -4,6 +4,8 @@
 
     $body = file_get_contents('php://input');
 
+    setcookie('game_first-run', true, 5184000 + time(), '/');
+
     $stime = "";
     $etime = "";
     $moves = "";
