@@ -37,10 +37,10 @@
             </div>
         </div>
 
-        <div class="row required">
+        <div class="row">
             <div class="large-6 columns">
                 <label>Email</label>
-                <input type="email" name="email" maxlength="50" required>
+                <input type="email" name="email" maxlength="50">
             </div>
         </div>
 
@@ -51,6 +51,22 @@
                     <option></option>
                     <option>Male</option>
                     <option>Female</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="row required">
+            <div class="large-4 columns">
+                <label for="customDropdown">Ethnicity</label>
+                <select id="customDropdown" name="ethnicity" required>
+                    <option></option>
+                    <option>American Indian or Alaska Native</option>
+                    <option>Asian</option>
+                    <option>Black or African American</option>
+                    <option>Hispanic or Latino</option>
+                    <option>Native Hawaiian or Pacific Islander</option>
+                    <option>White</option>
+                    <option>Other</option>
                     <option>Prefer not to say</option>
                 </select>
             </div>
@@ -93,6 +109,7 @@ if (isset($_POST['Submit'])) {
     setcookie('survey_email', $_POST['email'], 5184000 + time());
     setcookie('survey_gender', $_POST['gender'], 5184000 + time());
     setcookie('survey_age', $_POST['age'], 5184000 + time());
+    setcookie('survey_ethnicity', $_POST['ethnicity'], 5184000 + time());
 
     header('Location: '.$_SERVER['REQUEST_URI']);
 } 
