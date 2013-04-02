@@ -48,7 +48,7 @@
 
     mysql_select_db('c0smic_maze-game');
 
-    $sql= "INSERT INTO data (name, email, gender, age, ethnciity, stime, etime, moves)
+    $sql= "INSERT INTO data (name, email, gender, age, ethnicity, stime, etime, moves)
     VALUES
     ('$name', '$email', '$gender', '$age', '$ethnicity', '$stime','$etime','$moves')";
 
