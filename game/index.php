@@ -65,7 +65,7 @@ if(isset($_COOKIE['survey_name'])){
             <section class="top-bar-section">
                 <ul class="left">
                     <li>
-                        <a href="#">The Team</a>
+                        <a href="/game">The Game</a>
                     </li>
                     <li>
                         <span data-tooltip class="has-tip tip-top" title="Coming soon, watch the AI play the game!"><a href="#">Neural Network</a></span>
