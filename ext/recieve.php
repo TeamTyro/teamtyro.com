@@ -9,18 +9,33 @@
     $stime = "";
     $etime = "";
     $moves = "";
+    $name = "";
+    $email = "";
+    $gender = "";
+    $age = "";
+    $ethnicity = "";
 
     function parseData($body) {
         $splitter = substr($body, 0, 1);
-        global $stime, $etime, $moves;
+        global $stime, $etime, $moves, $name, $email, $gender, $age, $ethnicity;
 
-        $mark1 = strpos($body, $splitter, 1);
-        $mark2 = strpos($body, $splitter, $mark1+1);
-        $mark3 = strpos($body, $splitter, $mark2+1);
+        $mark1  = strpos($body, $splitter, 1);
+        $mark2  = strpos($body, $splitter, $mark1+1);
+        $mark3  = strpos($body, $splitter, $mark2+1);
+        $mark4  = strpos($body, $splitter, $mark3+1);
+        $mark5  = strpos($body, $splitter, $mark4+1);
+        $mark6  = strpos($body, $splitter, $mark5+1);
+        $mark7  = strpos($body, $splitter, $mark6+1);
+        $mark8  = strpos($body, $splitter, $mark7+1);
 
-        $stime = substr($body, 1, $mark1-1);
-        $etime = substr($body, $mark1+1, $mark2-$mark1-1);
-        $moves = substr($body, $mark2+1, $mark3-$mark2-1);
+        $stime  = substr($body, 1, $mark1-1);
+        $etime  = substr($body, $mark1+1, $mark2-$mark1-1);
+        $moves  = substr($body, $mark2+1, $mark3-$mark2-1);
+        $name   = substr($body, $mark3+1, $mark4-$mark3-1);
+        $email  = substr($body, $mark4+1, $mark5-$mark4-1);
+        $gender = substr($body, $mark5+1, $mark6-$mark5-1);
+        $age    = substr($body, $mark6+1, $mark7-$mark6-1);
+        $ethnicity = substr($body, $mark7+1, $mark8-$mark7-1);
     }
     parseData($body);
 
@@ -33,9 +48,9 @@
 
     mysql_select_db('c0smic_maze-game');
 
-    $sql= "INSERT INTO data (stime, etime, moves)
+    $sql= "INSERT INTO data (name, email, gender, age, ethnciity, stime, etime, moves)
     VALUES
-    ('$stime','$etime','$moves')";
+    ('$name', '$email', '$gender', '$age', '$ethnicity', '$stime','$etime','$moves')";
 
     $retval = mysql_query( $sql, $conn );
     if(! $retval )
