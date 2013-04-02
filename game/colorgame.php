@@ -1,5 +1,5 @@
 <div class="large-7 columns game">
-        <applet class="large-centered"code="org.lwjgl.util.applet.AppletLoader" archive="lwjgl_util_applet.jar" codebase="." width="600" height="600">
+        <applet class="large-centered"code="org.lwjgl.util.applet.AppletLoader" archive="lwjgl_util_applet.jar" codebase="/game" width="600" height="600">
 
             <!-- Detect if person has played before -->
             <param name="returning" value="">
