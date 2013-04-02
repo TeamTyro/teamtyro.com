@@ -7,7 +7,9 @@
             <?php
             if(isset($_COOKIE['survey_name'])){
                 echo '<param name=\"name\" value=\"' + $name + '">';
-                echo '<param name=\"email\" value=\"' + $email + '">';
+                if(isset($_COOKIE['survey_email'])){
+                    echo '<param name=\"email\" value=\"' + $email + '">';
+                }
                 echo '<param name=\"gender\" value=\"' + $gender + '">';
                 echo '<param name=\"ethnicity\" value=\"' + $ethnicity + '">';
                 echo '<param name=\"age\" value=\"' + $age + '">';
