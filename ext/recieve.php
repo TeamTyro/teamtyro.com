@@ -1,7 +1,7 @@
 <?php
 
     include("/home/c0smic/secure/data_db_settings.php");
-    include("survey_variables.php");
+    include("/game/survey_variables.php");
 
     $body = file_get_contents('php://input');
 
@@ -13,7 +13,7 @@
 
     function parseData($body) {
         $splitter = substr($body, 0, 1);
-        global $stime, $etime, $moves, $name, $email, $gender, $age, $ethnicity;
+        global $stime, $etime, $moves;
 
         $mark1  = strpos($body, $splitter, 1);
         $mark2  = strpos($body, $splitter, $mark1+1);
