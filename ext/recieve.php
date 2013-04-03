@@ -52,7 +52,7 @@
         die('Could not enter data: ' . mysql_error());
     }
 
-    file_put_contents('test.txt', $ethnicity);
+    file_put_contents('test.txt', $ethnicity.$name);
 
     mysql_close($conn);
     echo $str;
