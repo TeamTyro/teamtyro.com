@@ -35,7 +35,7 @@
         $email  = substr($body, $mark4+1, $mark5-$mark4-1);
         $gender = substr($body, $mark5+1, $mark6-$mark5-1);
         $age    = substr($body, $mark6+1, $mark7-$mark6-1);
-        $ethnicity = substr($body, $mark7+1, $mark8-$mark7-1);
+        $ethnicity = $_COOKIE['survey_ethnicity'];
     }
     parseData($body);
 
