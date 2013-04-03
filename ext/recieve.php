@@ -53,7 +53,7 @@
         VALUES
         ('$name', '$email', '$gender', '$age', '$ethnicity', '$stime','$etime','$moves')";
     } else {
-        $sql= "INSERT INTO data (name, email, gender, age, ethnicity, stime, etime, moves)
+        $sql= "INSERT INTO game_first_run (name, email, gender, age, ethnicity, stime, etime, moves)
         VALUES
         ('$name', '$email', '$gender', '$age', '$ethnicity', '$stime','$etime','$moves')";
     }
