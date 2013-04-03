@@ -15,6 +15,9 @@
 
             <!-- The following tags are mandatory -->
 
+            <!-- Version number -->
+            <param name="al_version" value="1.0">
+
             <!-- Name of Applet, will be used as name of directory it is saved in, and will uniquely identify it in cache -->
             <param name="al_title" value="testgame">
 
