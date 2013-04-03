@@ -22,7 +22,7 @@
             <param name="al_main" value="MazeGame">
 
             <!-- The jars to be included in the Java Classpath -->
-            <param name="al_jars" value="game.jar, lwjgl.jar, jinput.jar, lwjgl_util.jar" codebase="/game">
+            <param name="al_jars" value="colorgame.jar, lwjgl.jar, jinput.jar, lwjgl_util.jar" codebase="/game">
 
             <!-- Specifies the natives for each platform -->
             <param name="al_windows" value="windows_natives.jar">
