@@ -72,7 +72,6 @@ include("survey_variables.php");
         </nav>
     </div>
 </div>
-<h1><?=$ethnicity?></h1>
 <div class="row content_load">
 <?php
 
