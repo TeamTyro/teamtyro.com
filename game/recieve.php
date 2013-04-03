@@ -1,9 +1,7 @@
 <?php
 
     include("/home/c0smic/secure/data_db_settings.php");
-    $path = $_SERVER['DOCUMENT_ROOT'];
-    $path .= "/game/survey_variables.php";
-    include($path);
+    include("survey_variables.php");
 
     $body = file_get_contents('php://input');
 
