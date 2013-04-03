@@ -1,6 +1,7 @@
 <?php
 
     include("/home/c0smic/secure/data_db_settings.php");
+    include("survey_variables.php");
 
     $body = file_get_contents('php://input');
 
@@ -9,11 +10,6 @@
     $stime = "";
     $etime = "";
     $moves = "";
-    $name = "";
-    $email = "";
-    $gender = "";
-    $age = "";
-    $ethnicity = "";
 
     function parseData($body) {
         $splitter = substr($body, 0, 1);
@@ -22,20 +18,10 @@
         $mark1  = strpos($body, $splitter, 1);
         $mark2  = strpos($body, $splitter, $mark1+1);
         $mark3  = strpos($body, $splitter, $mark2+1);
-        $mark4  = strpos($body, $splitter, $mark3+1);
-        $mark5  = strpos($body, $splitter, $mark4+1);
-        $mark6  = strpos($body, $splitter, $mark5+1);
-        $mark7  = strpos($body, $splitter, $mark6+1);
-        $mark8  = strpos($body, $splitter, $mark7+1);
 
         $stime  = substr($body, 1, $mark1-1);
         $etime  = substr($body, $mark1+1, $mark2-$mark1-1);
         $moves  = substr($body, $mark2+1, $mark3-$mark2-1);
-        $name   = substr($body, $mark3+1, $mark4-$mark3-1);
-        $email  = substr($body, $mark4+1, $mark5-$mark4-1);
-        $gender = substr($body, $mark5+1, $mark6-$mark5-1);
-        $age    = substr($body, $mark6+1, $mark7-$mark6-1);
-        $ethnicity = $_COOKIE['survey_ethnicity'];
     }
     parseData($body);
 

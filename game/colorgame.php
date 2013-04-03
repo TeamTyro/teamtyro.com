@@ -1,18 +1,6 @@
 <div class="large-7 columns game">
         <applet class="large-centered"code="org.lwjgl.util.applet.AppletLoader" archive="lwjgl_util_applet.jar" codebase="/game" width="600" height="600">
 
-            <?php
-            if(isset($_COOKIE['survey_name'])){
-                echo '<param name="name" value="' , $name , '">';
-                if(isset($_COOKIE['survey_email'])){
-                    echo '<param name="email" value="' , $email , '">';
-                }
-                echo '<param name="gender" value="' , $gender , '">';
-                echo '<param name="ethnicity" value="' , $ethnicity , '">';
-                echo '<param name="age" value="' , $age , '">';
-            }
-            ?>
-
             <!-- The following tags are mandatory -->
 
             <!-- Version number -->
