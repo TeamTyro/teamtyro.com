@@ -48,9 +48,15 @@
 
     mysql_select_db('c0smic_maze-game');
 
-    $sql= "INSERT INTO data (name, email, gender, age, ethnicity, stime, etime, moves)
-    VALUES
-    ('$name', '$email', '$gender', '$age', '$ethnicity', '$stime','$etime','$moves')";
+    if(isset($_COOKIE['game_first-run'])){
+        $sql= "INSERT INTO game_returning (name, email, gender, age, ethnicity, stime, etime, moves)
+        VALUES
+        ('$name', '$email', '$gender', '$age', '$ethnicity', '$stime','$etime','$moves')";
+    } else {
+        $sql= "INSERT INTO data (name, email, gender, age, ethnicity, stime, etime, moves)
+        VALUES
+        ('$name', '$email', '$gender', '$age', '$ethnicity', '$stime','$etime','$moves')";
+    }
 
     $retval = mysql_query( $sql, $conn );
     if(! $retval )
