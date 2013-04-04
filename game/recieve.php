@@ -50,8 +50,6 @@
         die('Could not enter data: ' . mysql_error());
     }
 
-    file_put_contents('test.txt', $ethnicity.$name.$moves);
-
     mysql_close($conn);
     echo $str;
 
