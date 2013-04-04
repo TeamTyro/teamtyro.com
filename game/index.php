@@ -49,6 +49,7 @@ include("survey_variables.php");
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/ext/js/jquery-1.9.1.min.js"><\/script>')</script>
     <script src="/ext/js/custom.modernizr.js"></script>
+    <script src="/ext/js/deployJava.js"></script>
 
     <!-- IE Fix for HTML5 Tags -->
     <!--[if lt IE 9]>
@@ -87,6 +88,12 @@ include("survey_variables.php");
     </div>
 </div>
 <div class="row content_load">
+    <div class="row hide">
+        <div data-alert class="large-12 columns alert-box alert round">
+            You do not have Java support, and will not be able to play the game.  Please <a href="http://www.java.com/en/download/index.jsp">install</a> to play.  
+            <a href="#" class="close">&times;</a>
+        </div>
+    </div>
 <?php
 
 if(isset($_COOKIE['survey_complete'])){
@@ -124,6 +131,13 @@ if(isset($_COOKIE['survey_complete'])){
     $('.scrollup').click(function() {
         $("html, body").animate({ scrollTop: 0 }, 600);
         return false;
+    });
+    </script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        if(!deployJava.getJREs()) {
+            $('div.alert').parent().fadeIn(1000).removeClass('hide');
+        }
     });
     </script>
 
