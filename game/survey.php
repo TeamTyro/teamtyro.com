@@ -25,15 +25,15 @@
         return isFormValid;
     }
 </script>
-<div class="large-6 columns large-centered">
+<div class="large-6 columns">
     <form class="survey" name="survey" action="" method="post" onsubmit="return validateForm()">
       <fieldset>
         <legend>Player Survey</legend>
 
-        <div class="row required">
+        <div class="row">
             <div class="large-6 columns">
                 <label>Name</label>
-                <input type="text" name="name" maxlength="70" autocomplete="off" autofocus required>
+                <input type="text" name="name" maxlength="70" autocomplete="off" autofocus>
             </div>
         </div>
 
@@ -46,7 +46,7 @@
 
         <div class="row required">
             <div class="large-4 columns">
-                <label for="customDropdown">Gender</label>
+                <label for="customDropdown">Gender<span>*</span></label>
                 <select id="customDropdown" name="gender" required>
                     <option></option>
                     <option>Male</option>
@@ -57,7 +57,7 @@
 
         <div class="row required">
             <div class="large-4 columns">
-                <label for="customDropdown">Ethnicity</label>
+                <label for="customDropdown">Ethnicity<span>*</span></label>
                 <select id="customDropdown" name="ethnicity" required>
                     <option></option>
                     <option>American Indian or Alaska Native</option>
@@ -74,7 +74,7 @@
 
         <div class="row required">
             <div class="large-4 columns">
-                <label for="customDropdown">Age</label>
+                <label for="customDropdown">Age<span>*</span></label>
                 <select id="customDropdown" name="age" required>
                     <option></option>
                     <option>Under 11</option>
@@ -94,10 +94,19 @@
             <div class="large-4 columns submit-button">
                 <input class="nice blue radius button" type="submit" name="Submit" value="Submit">
             </div>
+            <div class="large-4 columns text-right">
+                <p>* Required fields</p>
+            </div>
         </div>
 
       </fieldset>
     </form>
+</div>
+<div class="large-6 columns">
+    <h3>Player Survey</h3>
+    <p>To help us get a better understanding of the data we collect from people playing the game, we have a simple survey to fill out once.  All information collected from the survey will 
+        remain private and will not be distributed to any third parties.</p>
+    <h4 class="subheader">Thank you for your time, we love you!</h4>
 </div>
 
 <?php
