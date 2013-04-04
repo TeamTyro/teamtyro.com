@@ -108,10 +108,24 @@ if(isset($_COOKIE['survey_complete'])){
             </ul>
         </div>
         <div class="large-2 columns">
-            <a href="">Back to top</a>
+            <a href="" class="scrollup">Back to top</a>
         </div>
     </div>
 </footer>
+
+    <script type="text/javascript">
+    $(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            $('.scrollup').fadeIn();
+        } else {
+            $('.scrollup').fadeOut();
+        }
+    }); 
+    $('.scrollup').click(function() {
+        $("html, body").animate({ scrollTop: 0 }, 600);
+        return false;
+    });
+    </script>
 
     <script src="/ext/js/foundation.min.js"></script>
     <script>

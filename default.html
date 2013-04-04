@@ -121,7 +121,7 @@
 				<h1>About</h1>
 			</div>
 			<p class="intro">We need you to help us collect data on how humans learn.</p>
-			<p>We're a group of high school students that are studying the way different types of artificial intelligence (AI) algorithms learn, when compared to humans. To do this, we've created two different kinds of common AI algorithms, a neural network and a genetic algorithm, and both have been designed to complete the same task: winning a game. To compare our findings to how humans learn, we need to generate lots of data from actual people playing our simple game, <em>that's where you come in!</em></p>
+			<p>We're a group of five high school students that are studying the way different types of artificial intelligence (AI) algorithms learn, when compared to humans. To do this, we've created two different kinds of common AI algorithms, a neural network and a genetic algorithm, and both have been designed to complete the same task: winning a game. To compare our findings to how humans learn, we need to generate lots of data from actual people playing our simple game, <em>that's where you come in!</em></p>
 		</section>
 		<section id="design">
 			<div class="section_head">
@@ -161,12 +161,26 @@
 			</ul>
 		</div>
 		<div class="large-2 columns">
-			<a href="">Back to top</a>
+			<a href="" class="scrollup">Back to top</a>
 		</div>
 	</div>
 </footer>
 
 <a href="http://github.com/teamtyro" target="_blank" class="gbanner"><img style="position: absolute; top: 0; right: 0; border: 0;" src="ext/img/forkme_right_red_aa0000.png" alt="Fork me on GitHub"></a>
+
+	<script type="text/javascript">
+	$(window).scroll(function() {
+        if ($(this).scrollTop() > 100) {
+            $('.scrollup').fadeIn();
+        } else {
+            $('.scrollup').fadeOut();
+        }
+    }); 
+    $('.scrollup').click(function() {
+        $("html, body").animate({ scrollTop: 0 }, 600);
+        return false;
+    });
+	</script>
 
 	<div id="fb-root"></div>
 	<script>(function(d, s, id) {
