@@ -22,6 +22,11 @@
                 $(this).parent().remove("small");
             }
         });
+        if(isFormValid){
+            _gaq.push(['_trackEvent', 'Forms', 'Submit', 'Valid Submit']);
+        } else {
+            _gaq.push(['_trackEvent', 'Forms', 'Submit', 'Invalid Submit']);
+        }
         return isFormValid;
     }
 </script>
