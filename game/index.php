@@ -42,7 +42,7 @@ include("survey_variables.php");
 
     <title>Play - Team Tyro</title>
 
-    <link rel="stylesheet" href="/ext/css/foundation.min.css?v=1.3" />
+    <link rel="stylesheet" href="/ext/css/foundation.v1.min.css" />
     <link rel="stylesheet" href="/ext/css/normalize.css" />
     <link rel="stylesheet" href="/ext/css/app.css?v=1.3" />
 
