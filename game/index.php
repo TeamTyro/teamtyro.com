@@ -79,8 +79,8 @@ include("survey_variables.php");
                     </li>
                 </ul>
                 <ul class="right">
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="mailto:kcajketcham@gmail.com?subject=Team Tyro Feedback">Feedback</a></li>
+                    <li><a href="mailto:contact@teamtyro.com">Contact</a></li>
+                    <li><a href="mailto:feedback@teamtyro.com?subject=Team Tyro Feedback - ">Feedback</a></li>
                 </ul>
             </section>
         </nav>
