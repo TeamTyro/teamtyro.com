@@ -26,11 +26,24 @@ include("survey_variables.php");
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
 
+    <meta name="description" content="We're a group of high school students that are studying the way different types of artificial intelligence (AI) algorithms learn, when compared to humans.">
+    <meta name="keywords" content="Project, AI, High School, Project Lead the Way, Java">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Team Tyro, studying AI and humans with a game">
+    <meta name="twitter:url" content="http://teamtyro.com/">
+    <meta name="twitter:description" content="We're a group of high school students that are studying the way different types of artificial intelligence (AI) algorithms learn, when compared to humans.">
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="project" />
+    <meta property="og:title" content="Team Tyro, studying AI and humans with a game"/>
+    <meta property="og:description" content="We're a group of high school students that are studying the way different types of artificial intelligence (AI) algorithms learn, when compared to humans."/>
+    <meta property="og:url" content="http://teamtyro.com/"/>
+    <meta property="og:site_name" content="Team Tyro"/>
+
     <title>Play - Team Tyro</title>
 
-    <link rel="stylesheet" href="/ext/css/foundation.min.css?v=1.2" />
+    <link rel="stylesheet" href="/ext/css/foundation.min.css?v=1.3" />
     <link rel="stylesheet" href="/ext/css/normalize.css" />
-    <link rel="stylesheet" href="/ext/css/app.css?v=1.2" />
+    <link rel="stylesheet" href="/ext/css/app.css?v=1.3" />
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/ext/js/jquery-1.9.1.min.js"><\/script>')</script>
