@@ -46,6 +46,9 @@ header h2 {
   border-top: 1px solid #fff;
   border-bottom: 1px solid #ddd;
 }
+.row .row {
+  margin-right: 0 !important;
+}
 .nav {
   width: 100%;
   max-width: 100%;
