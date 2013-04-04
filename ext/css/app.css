@@ -1,41 +1,16 @@
-/* Artfully masterminded by ZURB  */
-
 /* --------------------------------------------------
    Table of Contents
 -----------------------------------------------------
 :: Shared Styles
-:: Page Name 1
-:: Page Name 2
+:: Home Page
+:: Game Page
+:: Media Queries
 */
 
 
 /* -----------------------------------------
    Shared Styles
 ----------------------------------------- */
-@media only screen and (max-width: 768px) {
-	.gbanner {
-		display: none;
-	}
-  header .button {
-    display: none;
-  }
-  header h5 {
-    margin-top: -2em !important;
-  }
-  .side-nav {
-    display: none;
-  }
-  #title {
-    font-size: 50px !important;
-  }
-}
-@media only screen and (min-height: 800px) {
-  footer.sticky-bottom {
-    bottom: 0;
-    position: absolute;
-    width: 100%;
-  }
-}
 html, body {
   height: 100%;
 }
@@ -58,7 +33,7 @@ header h1 {
   color: #fff;
 }
 header h2 {
-  width: 1100px;
+  max-width: 1100px;
   margin: 0.2em auto 0.5em;
   color: #fff;
   font-size: 40px;
@@ -173,4 +148,29 @@ footer {
 }
 select{
   margin-bottom: 15px;
+}
+/* -----------------------------------------
+   Media Queries
+----------------------------------------- */
+@media only screen and (max-width: 768px) {
+  .gbanner {
+    display: none;
+  }
+  .side-nav {
+    display: none;
+  }
+  #title {
+    font-size: 50px;
+  }
+  header h2 {
+    font-size: 32px;
+  }
+  .content {
+    width: 100% !important;
+  }
+}
+@media only screen and (min-height: 900px) {
+  footer.sticky-bottom {
+    margin-top: 174px !important;
+  }
 }
