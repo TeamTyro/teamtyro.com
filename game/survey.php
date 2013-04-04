@@ -56,7 +56,7 @@
         </div>
 
         <div class="row required">
-            <div class="large-4 columns">
+            <div class="large-6 columns">
                 <label for="customDropdown">Ethnicity<span>*</span></label>
                 <select id="customDropdown" name="ethnicity" required>
                     <option></option>
