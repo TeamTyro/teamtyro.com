@@ -58,6 +58,8 @@ header h1 {
   color: #fff;
 }
 header h2 {
+  width: 1100px;
+  margin: 0.2em auto 0.5em;
   color: #fff;
   font-size: 40px;
   font-weight: 200;
