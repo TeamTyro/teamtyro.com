@@ -25,6 +25,7 @@ include("survey_variables.php");
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+    <link rel="shortcut icon" href="http://teamtyro.com/favicon.ico" />
 
     <meta name="description" content="We're a group of high school students that are studying the way different types of artificial intelligence (AI) algorithms learn, when compared to humans.">
     <meta name="keywords" content="Project, AI, High School, Project Lead the Way, Java">
