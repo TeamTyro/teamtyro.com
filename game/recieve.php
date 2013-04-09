@@ -7,21 +7,18 @@
 
     setcookie('game_first-run', true, 5184000 + time(), '/');
 
-    $stime = "";
-    $etime = "";
+    $ttime = "";
     $moves = "";
 
     function parseData($body) {
         $splitter = substr($body, 0, 1);
-        global $stime, $etime, $moves;
+        global $ttime, $moves;
 
         $mark1  = strpos($body, $splitter, 1);
         $mark2  = strpos($body, $splitter, $mark1+1);
-        $mark3  = strpos($body, $splitter, $mark2+1);
 
-        $stime  = substr($body, 1, $mark1-1);
-        $etime  = substr($body, $mark1+1, $mark2-$mark1-1);
-        $moves  = substr($body, $mark2+1, $mark3-$mark2-1);
+        $ttime  = substr($body, 1, $mark1-1);
+        $moves  = substr($body, $mark1+1, $mark2-$mark1-1);
     }
     parseData($body);
 
@@ -35,13 +32,13 @@
     mysql_select_db('c0smic_maze-game');
 
     if(isset($_COOKIE['game_first-run'])){
-        $sql= "INSERT INTO game_returning (email, gender, age, ethnicity, stime, etime, moves)
+        $sql= "INSERT INTO game_returning (email, gender, age, ethnicity, ttime, moves)
         VALUES
-        ('$email', '$gender', '$age', '$ethnicity', '$stime','$etime','$moves')";
+        ('$email', '$gender', '$age', '$ethnicity', '$ttime', '$moves')";
     } else {
-        $sql= "INSERT INTO game_first_run (email, gender, age, ethnicity, stime, etime, moves)
+        $sql= "INSERT INTO game_first_run (email, gender, age, ethnicity, ttime, moves)
         VALUES
-        ('$email', '$gender', '$age', '$ethnicity', '$stime','$etime','$moves')";
+        ('$email', '$gender', '$age', '$ethnicity', '$ttime', '$moves')";
     }
 
     $retval = mysql_query( $sql, $conn );
