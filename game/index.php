@@ -38,14 +38,14 @@ include("survey_variables.php");
     <meta property="og:title" content="Team Tyro, studying AI and humans with a game"/>
     <meta property="og:description" content="We're a group of high school students that are studying the way different types of artificial intelligence (AI) algorithms learn, when compared to humans."/>
     <meta property="og:url" content="http://teamtyro.com/"/>
-    <meta property="og:image" content="http://teamtyro.com/ext/img/website-capture.png" /> 
+    <meta property="og:image" content="http://teamtyro.com/ext/img/website-capture.png" />
     <meta property="og:site_name" content="Team Tyro"/>
 
     <title>Play - Team Tyro</title>
 
     <link rel="stylesheet" href="/ext/css/foundation.v1.min.css" />
     <link rel="stylesheet" href="/ext/css/normalize.css" />
-    <link rel="stylesheet" href="/ext/css/app.css?v=1.3" />
+    <link rel="stylesheet" href="/ext/css/app.css?v=1.4" />
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/ext/js/jquery-1.9.1.min.js"><\/script>')</script>
@@ -91,7 +91,7 @@ include("survey_variables.php");
 <div class="row content_load">
     <div class="row hide">
         <div data-alert class="large-12 columns alert-box alert round">
-            You do not have Java support, and will not be able to play the game.  Please <a href="http://www.java.com/en/download/index.jsp">install</a> to play.  
+            You do not have Java support, and will not be able to play the game.  Please <a href="http://www.java.com/en/download/index.jsp">install</a> to play.
             <a href="#" class="close">&times;</a>
         </div>
     </div>
@@ -128,7 +128,7 @@ if(isset($_COOKIE['survey_complete'])){
         } else {
             $('.scrollup').fadeOut();
         }
-    }); 
+    });
     $('.scrollup').click(function() {
         $("html, body").animate({ scrollTop: 0 }, 600);
         return false;
