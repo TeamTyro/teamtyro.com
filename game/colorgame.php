@@ -8,7 +8,7 @@
             height:600
           };
           var parameters = {
-            al_version:1.3,
+            al_version:1.35,
             al_title:'TeamTyro Game',
             al_main:'MazeGame',
             al_jars:'mazegame.jar, lwjgl.jar, jinput.jar, lwjgl_util.jar',
