@@ -1,26 +1,24 @@
 <div class="large-7 columns game">
-        <applet class="large-centered"code="org.lwjgl.util.applet.AppletLoader" archive="lwjgl_util_applet.jar" codebase="/game" width="600" height="600">
-
-            <!-- The following tags are mandatory -->
-
-            <!-- Version number -->
-            <param name="al_version" value="1.22">
-
-            <!-- Name of Applet, will be used as name of directory it is saved in, and will uniquely identify it in cache -->
-            <param name="al_title" value="testgame">
-
-            <!-- The main class of the applet -->
-            <param name="al_main" value="MazeGame">
-
-            <!-- The jars to be included in the Java Classpath -->
-            <param name="al_jars" value="mazegame.jar, lwjgl.jar, jinput.jar, lwjgl_util.jar" codebase="/game">
-
-            <!-- Specifies the natives for each platform -->
-            <param name="al_windows" value="windows_natives.jar">
-            <param name="al_linux" value="linux_natives.jar">
-            <param name="al_mac" value="macosx_natives.jar">
-
-        </applet>
+        <script>
+          var attributes = {
+            code:'org.lwjgl.util.applet.AppletLoader',
+            archive:'lwjgl_util_applet.jar',
+            codebase:'/game',
+            width:600,
+            height:600
+          };
+          var parameters = {
+            al_version:1.3,
+            al_title:'TeamTyro Game',
+            al_main:'MazeGame',
+            al_jars:'mazegame.jar, lwjgl.jar, jinput.jar, lwjgl_util.jar',
+            al_windows:'windows_natives.jar',
+            al_linux:'linux_natives.jar',
+            al_mac:'macosx_natives.jar'
+          };
+          var version = '1.6' ;
+          deployJava.runApplet(attributes, parameters, version);
+        </script>
         <div class="text-center">
             <p>This game requires <a href="http://www.java.com/en/download/index.jsp">Java</a> to play. <br/>
             <em>Not available on mobile devices, mouse and keyboard are required to play.</em></p>
