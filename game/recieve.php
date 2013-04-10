@@ -5,9 +5,9 @@
 
     session_start();
     if (!isset($_SESSION['plays'])) { 
-        $_SESSION['plays'] == 0;
+        $_SESSION['plays'] = 1;
     } else {
-        $_SESSION['plays'] += 1;
+        $_SESSION['plays'] = $_SESSION['plays'] + 1;
     }
 
     $body = file_get_contents('php://input');
