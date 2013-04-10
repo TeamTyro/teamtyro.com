@@ -7,7 +7,7 @@
     if (!isset($_SESSION['plays'])) { 
         $_SESSION['plays'] = 1;
     } else {
-        $_SESSION['plays'] = $_SESSION['plays'] + 1;
+        $_SESSION['plays']++;
     }
 
     $body = file_get_contents('php://input');
@@ -16,8 +16,8 @@
 
     $ttime = "";
     $moves = "";
-    $session = session_id();
-    $return = $_SESSION['plays'];
+    $client = session_id();
+    $plays = (string)$_SESSION['plays'];
 
     function parseData($body) {
         $splitter = substr($body, 0, 1);
@@ -40,14 +40,22 @@
 
     mysql_select_db('c0smic_maze-game');
 
-    if(isset($_COOKIE['game_first-run'])){
-        $sql= "INSERT INTO game_returning (session, return, email, gender, age, ethnicity, ttime, moves)
-        VALUES
-        ('$session', '$return', '$email', '$gender', '$age', '$ethnicity', '$ttime', '$moves')";
+    function sendData() {
+        global $client, $plays, $email, $gender, $age, $ethnicity, $ttime, $moves, $sql;
+        if(isset($_COOKIE['game_first-run'])){
+            $sql = "INSERT INTO game_returning (client, plays, email, gender, age, ethnicity, ttime, moves)
+            VALUES
+            ('$client', '$plays', '$email', '$gender', '$age', '$ethnicity', '$ttime', '$moves')";
+        } else {
+            $sql = "INSERT INTO game_first_run (client, plays, email, gender, age, ethnicity, ttime, moves)
+            VALUES
+            ('$plays', '$email', '$gender', '$age', '$ethnicity', '$ttime', '$moves')";
+        }
+    }
+    if($ttime != ""  && $moves != ""){
+        sendData();
     } else {
-        $sql= "INSERT INTO game_first_run (session, return, email, gender, age, ethnicity, ttime, moves)
-        VALUES
-        ('$session', '$return', '$email', '$gender', '$age', '$ethnicity', '$ttime', '$moves')";
+        die('Could not enter data: Values missing from ttime & moves');
     }
 
     $retval = mysql_query( $sql, $conn );
