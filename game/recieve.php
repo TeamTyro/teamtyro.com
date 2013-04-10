@@ -49,7 +49,7 @@
         } else {
             $sql = "INSERT INTO game_first_run (client, plays, email, gender, age, ethnicity, ttime, moves)
             VALUES
-            ('$plays', '$email', '$gender', '$age', '$ethnicity', '$ttime', '$moves')";
+            ('$client', '$plays', '$email', '$gender', '$age', '$ethnicity', '$ttime', '$moves')";
         }
     }
     if($ttime != ""  && $moves != ""){
