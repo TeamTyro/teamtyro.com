@@ -45,6 +45,30 @@
     <script src="/ext/js/custom.modernizr.js"></script>
     <script src="/ext/js/deployJava.js"></script>
 
+    <style>
+        .thanks h3 {
+            color: #2ba6cb;
+        }
+        .time {
+            color: #CB2B2B;
+        }
+        .play_again {
+            display: inline;
+        }
+        .panel {
+            padding: 35px;
+        }
+        .social-list {
+            line-height: 1;
+        }
+        .social-list li {
+            margin: 0 6px;
+        }
+        .twitter-share-button {
+            min-width: 70px !important; 
+        }
+    </style>
+
     <!-- IE Fix for HTML5 Tags -->
     <!--[if lt IE 9]>
         <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -81,9 +105,93 @@
         </nav>
     </div>
 </div>
-<div class="row content_load">
+<div class="row content_load thanks">
     <div>
-        <h3>Congradulations!  You succesfully completed the maze, and in only <?php echo $_GET['time'] ?> seconds!</h3>
+        <h3>Thank you for playing our game!</h3>
+    </div>
+    <div class="large-12 columns text-center panel">
+        <?php 
+            if(isset($_GET['time'])) {
+                parseString($_GET['time']);
+            } else {
+                $pretty_time = null;
+            }
+
+            function parseString($time) {
+                global $pretty_time, $timeData;
+                $timeData[0] = substr($time, 0, 2);
+                $timeData[1] = substr($time, 3, -7);
+                $timeData[2] = substr($time, 6, -4);
+                $timeData[3] = substr($time, 9);
+
+                if($timeData[0] !== "00") {
+                    if($timeData[0] == "01"){
+                        $pretty_time = $timeData[0] . " hour, ";
+                    } else {
+                        $pretty_time = $timeData[0] . " hours, ";
+                    }
+                    if($timeData[1] !== "00"){
+                        if($timeData[1] == "01"){
+                            $pretty_time .= $timeData[1] . " minute and " . $timeData[2] . "." . $timeData[3] . " seconds!";
+                        } else {
+                            $pretty_time .= $timeData[1] . " minutes and " . $timeData[2] . "." . $timeData[3] . " seconds!";
+                        }
+                    } else {
+                        $pretty_time .= " and " . $timeData[2] . "." . $timeData[3] . " seconds!";
+                    }
+                } elseif($timeData[1] !== "00") {
+                    if($timeData[1] == "01"){
+                        $pretty_time .= $timeData[1] . " minute and " . $timeData[2] . "." . $timeData[3] . " seconds!";
+                    } else {
+                        $pretty_time .= $timeData[1] . " minutes and " . $timeData[2] . "." . $timeData[3] . " seconds!";
+                    }
+                } else {
+                    $pretty_time .= $timeData[2] . "." . $timeData[3] . " seconds!";
+                }
+            }
+        ?>
+        <h5>
+            <?php 
+            echo "You succesfully completed the game";
+            if(isset($pretty_time)){ 
+                echo ", and in only <span class=\"time\">" . $pretty_time . "</span>";
+            } else { 
+                echo "!";
+            } ?>
+        </h5>
+        <div class="social">
+            <a href="https://twitter.com/share" class="twitter-share-button" title="Share your time on Twitter" data-url="http://teamtyro.com/" data-text="I just completed Team Tyro's game with a time of <?php echo $_GET['time'] ?>! Can you beat that and help their study?" data-size="large" data-count="none">Tweet</a>
+            
+        </div>
+    </div>
+    <div class="play_again large-6 columns">
+        <p>Feeling lucky? Try and get a better time</p>
+        <a href="/game" class="button success">Play again</a>
+    </div>
+    <div class="large-6 columns">
+        <h6>You've just helped us further our study comparing how humans and AI learn, thanks!</h6>
+        <p>Please consider spreading the word</p>
+        <div class="columns large-centered">
+            <ul class="social-list inline-list">
+                <li>
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://teamtyro.com/" data-size="small" data-text="Team Tyro, help a study on AI and humans by playing a quick game">Tweet</a>
+                </li>
+                <li>
+                    <div class="g-plusone" data-size="medium" data-href="http://teamtyro.com/"></div>
+                </li>
+                <li>
+                    <div class="fb-like" data-href="http://teamtyro.com/" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false" data-font="arial"></div>
+                </li>
+            <script type="text/javascript">
+              (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+              })();
+            </script>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+            </ul>
+        </div>
     </div>
 </div>
 <footer class="sticky-bottom">
@@ -116,6 +224,14 @@
     });
     </script>
 
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
     <script src="/ext/js/foundation.min.js"></script>
     <script>
         $(document).foundation();
