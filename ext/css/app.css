@@ -98,9 +98,11 @@ footer {
 }
 ::selection {
   background: rgb(61, 190, 231);
+  color: #fff;
 }
 ::-moz-selection {
   background: rgb(61, 190, 231);
+  color: #fff;
 }
 
 /* -----------------------------------------
