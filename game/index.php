@@ -1,6 +1,7 @@
 <?php
 
 ob_start();
+session_start();
 
 include("survey_variables.php");
 
