@@ -157,9 +157,32 @@ select{
 /* -----------------------------------------
    Team Page
 ----------------------------------------- */
-h3 h6 {
+.person h3 h6 {
   margin-bottom: 0;
 }
+/* -----------------------------------------
+   Thanks Page
+----------------------------------------- */
+.thanks h3 {
+    color: #2ba6cb;
+}
+.time {
+    color: #CB2B2B;
+}
+.thanks .panel {
+    padding: 35px;
+    margin: 30px 0 30px;
+}
+.social-list {
+    line-height: 1;
+}
+.social-list li {
+    margin: 0 6px;
+}
+.twitter-share-button {
+    min-width: 70px !important; 
+}
+
 /* -----------------------------------------
    Media Queries
 ----------------------------------------- */

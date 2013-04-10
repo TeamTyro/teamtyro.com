@@ -45,7 +45,7 @@ include("survey_variables.php");
 
     <link rel="stylesheet" href="/ext/css/foundation.v1.min.css" />
     <link rel="stylesheet" href="/ext/css/normalize.css" />
-    <link rel="stylesheet" href="/ext/css/app.css?v=1.4" />
+    <link rel="stylesheet" href="/ext/css/app_v1.0.css" />
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/ext/js/jquery-1.9.1.min.js"><\/script>')</script>

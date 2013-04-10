@@ -38,36 +38,12 @@
 
     <link rel="stylesheet" href="/ext/css/foundation.v1.min.css" />
     <link rel="stylesheet" href="/ext/css/normalize.css" />
-    <link rel="stylesheet" href="/ext/css/app.css?v=1.4" />
+    <link rel="stylesheet" href="/ext/css/app_v1.0.css" />
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="/ext/js/jquery-1.9.1.min.js"><\/script>')</script>
     <script src="/ext/js/custom.modernizr.js"></script>
     <script src="/ext/js/deployJava.js"></script>
-
-    <style>
-        .thanks h3 {
-            color: #2ba6cb;
-        }
-        .time {
-            color: #CB2B2B;
-        }
-        .play_again {
-            display: inline;
-        }
-        .panel {
-            padding: 35px;
-        }
-        .social-list {
-            line-height: 1;
-        }
-        .social-list li {
-            margin: 0 6px;
-        }
-        .twitter-share-button {
-            min-width: 70px !important; 
-        }
-    </style>
 
     <!-- IE Fix for HTML5 Tags -->
     <!--[if lt IE 9]>
@@ -152,7 +128,7 @@
         ?>
         <h5>
             <?php 
-            echo "You succesfully completed the game";
+            echo "You've successfully completed the game";
             if(isset($pretty_time)){ 
                 echo ", and in only <span class=\"time\">" . $pretty_time . "</span>";
             } else { 
