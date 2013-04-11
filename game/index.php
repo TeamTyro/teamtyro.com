@@ -82,6 +82,7 @@ include("survey_variables.php");
                     </li>
                 </ul>
                 <ul class="right">
+                    <li><a href="/team">The Team</a></li>
                     <li><a href="mailto:contact@teamtyro.com">Contact</a></li>
                     <li><a href="mailto:feedback@teamtyro.com?subject=Team Tyro Feedback - ">Feedback</a></li>
                 </ul>
