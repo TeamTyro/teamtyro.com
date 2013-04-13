@@ -110,7 +110,6 @@ if(isset($_COOKIE['survey_complete'])){
 <footer class="sticky-bottom">
     <div class="row">
         <div class="large-10 columns">
-            <p>Built by <a href="http://jackketcham.com">Jack Ketcham</a></p>
             <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
             <ul class="inline-list">
                 <li><a href="http://github.com/teamtyro/teamtyro.com/issues?state=open">Submit issues</a></li>
