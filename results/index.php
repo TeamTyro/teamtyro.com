@@ -1,116 +1,116 @@
+<?php
+
+  /* include("/home/c0smic/secure/data_db_settings.php"); */
+    $dbname = '_maze-game';
+    $username = 'root';
+    $password = '';
+
+    try {
+      $conn = new PDO("mysql:host=localhost;dbname=$dbname", $username, $password);
+      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      $result = $conn->query('SELECT ethnicity, COUNT(*) AS count FROM game_returning GROUP BY ethnicity');
+
+      $rows = array();
+      $table = array();
+      $table['cols'] = array(
+
+        array('label' => 'Ethnicity', 'type' => 'string'),
+        array('label' => 'Count', 'type' => 'number')
+
+      );
+      foreach($result as $r) {
+        $temp = array();
+        $temp[] = array('v' => (string) $r['ethnicity']); 
+        $temp[] = array('v' => (int) $r['count']); 
+        $rows[] = array('c' => $temp);
+      }
+
+      $table['rows'] = $rows;
+
+      // convert data into JSON format
+      $jsonTable = json_encode($table);
+    } catch(PDOException $e) {
+        echo 'ERROR: ' . $e->getMessage();
+    }
+
+?>
 <!DOCTYPE HTML>
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 <head>
 
-    <!--
-     ______                            ______
-    /\__  _\                          /\__  _\
-    \/_/\ \/    __     __      ___ ___\/_/\ \/ __  __  _ __   ___
-       \ \ \  /'__`\ /'__`\  /' __` __`\ \ \ \/\ \/\ \/\`'__\/ __`\
-        \ \ \/\  __//\ \L\.\_/\ \/\ \/\ \ \ \ \ \ \_\ \ \ \//\ \L\ \
-         \ \_\ \____\ \__/.\_\ \_\ \_\ \_\ \ \_\/`____ \ \_\\ \____/
-          \/_/\/____/\/__/\/_/\/_/\/_/\/_/  \/_/`/___/> \/_/ \/___/
-                                                   /\___/
-                                                   \/__/
-    Web Developer: Jack Ketcham
-    -->
+  <!--
+   ______                            ______
+  /\__  _\                          /\__  _\
+  \/_/\ \/    __     __      ___ ___\/_/\ \/ __  __  _ __   ___
+     \ \ \  /'__`\ /'__`\  /' __` __`\ \ \ \/\ \/\ \/\`'__\/ __`\
+      \ \ \/\  __//\ \L\.\_/\ \/\ \/\ \ \ \ \ \ \_\ \ \ \//\ \L\ \
+       \ \_\ \____\ \__/.\_\ \_\ \_\ \_\ \ \_\/`____ \ \_\\ \____/
+        \/_/\/____/\/__/\/_/\/_/\/_/\/_/  \/_/`/___/> \/_/ \/___/
+                                                 /\___/
+                                                 \/__/
+  Web Developer: Jack Ketcham
+  -->
 
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="shortcut icon" href="http://teamtyro.com/favicon.ico" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <link rel="shortcut icon" href="http://teamtyro.com/favicon.ico" />
 
-    <meta name="description" content="We're a group of high school students that are studying the way different types of artificial intelligence (AI) algorithms learn, when compared to humans.">
-    <meta name="keywords" content="Project, AI, High School, Project Lead the Way, Java">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Team Tyro, studying AI and humans with a game">
-    <meta name="twitter:url" content="http://teamtyro.com/">
-    <meta name="twitter:description" content="We're a group of high school students that are studying the way different types of artificial intelligence (AI) algorithms learn, when compared to humans.">
-    <meta name="twitter:image" content="http://teamtyro.com/ext/img/website-capture.png">
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:title" content="Team Tyro, studying AI and humans with a game"/>
-    <meta property="og:description" content="We're a group of high school students that are studying the way different types of artificial intelligence (AI) algorithms learn, when compared to humans."/>
-    <meta property="og:url" content="http://teamtyro.com/"/>
-    <meta property="og:image" content="http://teamtyro.com/ext/img/website-capture.png" />
-    <meta property="og:site_name" content="Team Tyro"/>
+  <meta name="description" content="We're a group of high school students that are studying the way different types of artificial intelligence (AI) algorithms learn, when compared to humans.">
+  <meta name="keywords" content="Project, AI, High School, Project Lead the Way, Java">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Team Tyro, studying AI and humans with a game">
+  <meta name="twitter:url" content="http://teamtyro.com/">
+  <meta name="twitter:description" content="We're a group of high school students that are studying the way different types of artificial intelligence (AI) algorithms learn, when compared to humans.">
+  <meta name="twitter:image" content="http://teamtyro.com/ext/img/website-capture.png">
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Team Tyro, studying AI and humans with a game"/>
+  <meta property="og:description" content="We're a group of high school students that are studying the way different types of artificial intelligence (AI) algorithms learn, when compared to humans."/>
+  <meta property="og:url" content="http://teamtyro.com/"/>
+  <meta property="og:image" content="http://teamtyro.com/ext/img/website-capture.png" />
+  <meta property="og:site_name" content="Team Tyro"/>
 
-    <title>Play - Team Tyro</title>
+  <title>Results- Team Tyro</title>
 
-    <link rel="stylesheet" href="/ext/css/foundation.v1.min.css" />
-    <link rel="stylesheet" href="/ext/css/normalize.css" />
-    <link rel="stylesheet" href="/ext/css/app_v1.01.css" />
+  <link rel="stylesheet" href="/ext/css/foundation.v1.min.css" />
+  <link rel="stylesheet" href="/ext/css/normalize.css" />
+  <link rel="stylesheet" href="/ext/css/app_v1.01.css" />
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/ext/js/jquery-1.9.1.min.js"><\/script>')</script>
-    <script src="/ext/js/custom.modernizr.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="/ext/js/jquery-1.9.1.min.js"><\/script>')</script>
+  <script src="/ext/js/custom.modernizr.js"></script>
 
-    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-        <script type="text/javascript">
-            function showUser(str)
-            {
-            if (str=="")
-              {
-              document.getElementById("txtHint").innerHTML="";
-              return;
-              } 
-            if (window.XMLHttpRequest)
-              {// code for IE7+, Firefox, Chrome, Opera, Safari
-              xmlhttp=new XMLHttpRequest();
-              }
-            else
-              {// code for IE6, IE5
-              xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-              }
-            xmlhttp.onreadystatechange=function()
-              {
-              if (xmlhttp.readyState==4 && xmlhttp.status==200)
-                {
-                document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
-                }
-              }
-            xmlhttp.open("GET","retrieve.php?id="+str, true);
-            xmlhttp.send();
-            }
-        
-          // Load the Visualization API and the piechart package.
-          google.load('visualization', '1.0', {'packages':['corechart']});
-          
-          // Set a callback to run when the Google Visualization API is loaded.
-          google.setOnLoadCallback(drawChart);
+  <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+    google.load('visualization', '1', {'packages':['corechart']});
+    google.setOnLoadCallback(drawChart);
 
+    function drawChart() {
+      var data = new google.visualization.DataTable(<?=$jsonTable?>);
+      var options = {
+          title: 'Ethnicity',
+          is3D: 'true'
+        };
+      var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+      var plays_chart = new google.visualization.LineChart(document.getElementById('chart_div_2'));
+      var ex2_chart = new google.visualization.BarChart(document.getElementById('chart_div_4'));
+      chart.draw(data, options);
+      plays_chart.draw(data);
+      ex2_chart.draw(data);
+    }
+    </script>
 
-          // Callback that creates and populates a data table, 
-          // instantiates the pie chart, passes in the data and
-          // draws it.
-          function drawChart() {
+  <!-- IE Fix for HTML5 Tags -->
+  <!--[if lt IE 9]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
 
-          // Create the data table.
-          var data = new google.visualization.DataTable();
-          data.addColumn('string', 'Topping');
-          data.addColumn('number', 'Slices');
-          data.addRows([
-            ['Mushrooms', 3],
-            ['Onions', 1],
-            ['Olives', 1], 
-            ['Zucchini', 1],
-            ['Pepperoni', 2]
-          ]);
-
-          // Set chart options
-          var options = {'title':'How Much Pizza I Ate Last Night',
-                         'width':400,
-                         'height':300};
-
-          // Instantiate and draw our chart, passing in some options.
-          var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-          chart.draw(data, options);
-        }
-        </script>
-
-    <!-- IE Fix for HTML5 Tags -->
-    <!--[if lt IE 9]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+  <style>
+    .chart {
+      width: 640px;
+      height: 480px;
+    }
+  </style>
 
 </head>
 <body>
@@ -146,18 +146,16 @@
 </div>
 <div class="row content_load">
     <div class="large-6 columns">
-        <div id="chart_div" style="width:400; height:300"></div>
+        <div id="chart_div" class="chart"></div>
     </div>
     <div class="large-6 columns">
-        <form>
-            <label for="customDropdown" onchange="showUser(this.value)">Example</label>
-            <select id="customDropdown" name="users" required>
-                <option value=""></option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-            </select>
-        </form>
-        <div id="txtHint"></div>  
+        <div id="chart_div_2" class="chart"></div>
+    </div>
+    <div class="large-6 columns">
+        <div id="chart_div_3" class="chart"></div>
+    </div>
+    <div class="large-6 columns">
+        <div id="chart_div_4" class="chart"></div>
     </div>
 </div>
 <footer class="sticky-bottom">
