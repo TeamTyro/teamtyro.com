@@ -8,20 +8,27 @@
     try {
       $conn = new PDO("mysql:host=localhost;dbname=$dbname", $username, $password);
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      $result = $conn->query('SELECT ethnicity, COUNT(*) AS count FROM game_returning GROUP BY ethnicity');
+      //$result = $conn->query('SELECT ethnicity, COUNT(*) AS count FROM game_returning GROUP BY ethnicity');
+      $result = $conn->query('SELECT ttime, plays FROM game_returning ORDER BY plays');
 
       $rows = array();
       $table = array();
       $table['cols'] = array(
 
-        array('label' => 'Ethnicity', 'type' => 'string'),
-        array('label' => 'Count', 'type' => 'number')
+        array('label' => 'Plays', 'type' => 'number'),
+        array('label' => 'Total Time', 'type' => 'number')
 
       );
+      // foreach($result as $r) {
+      //   $temp = array();
+      //   $temp[] = array('v' => (string) $r['ethnicity']); 
+      //   $temp[] = array('v' => (int) $r['count']); 
+      //   $rows[] = array('c' => $temp);
+      // }
       foreach($result as $r) {
         $temp = array();
-        $temp[] = array('v' => (string) $r['ethnicity']); 
-        $temp[] = array('v' => (int) $r['count']); 
+        $temp[] = array('v' => (int) $r['plays']);
+        $temp[] = array('v' => (int) $r['ttime']);
         $rows[] = array('c' => $temp);
       }
 
@@ -93,7 +100,7 @@
         };
       var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
       var plays_chart = new google.visualization.LineChart(document.getElementById('chart_div_2'));
-      var ex2_chart = new google.visualization.BarChart(document.getElementById('chart_div_4'));
+      var ex2_chart = new google.visualization.ScatterChart(document.getElementById('chart_div_4'));
       chart.draw(data, options);
       plays_chart.draw(data);
       ex2_chart.draw(data);
