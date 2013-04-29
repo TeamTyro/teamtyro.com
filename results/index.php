@@ -8,8 +8,11 @@
     try {
       $conn = new PDO("mysql:host=localhost;dbname=$dbname", $username, $password);
       $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-      //$result = $conn->query('SELECT ethnicity, COUNT(*) AS count FROM game_returning GROUP BY ethnicity');
-      $result = $conn->query('SELECT ttime, plays FROM game_returning ORDER BY plays');
+
+      $query[1] = "SELECT ttime, plays FROM game_returning ORDER BY plays";
+      $query[2] = "SELECT ethnicity, COUNT(*) AS count FROM game_returning GROUP BY ethnicity";
+      
+      $result = $conn->query($query[1]);
 
       $rows = array();
       $table = array();
@@ -19,12 +22,12 @@
         array('label' => 'Total Time', 'type' => 'number')
 
       );
-      // foreach($result as $r) {
-      //   $temp = array();
-      //   $temp[] = array('v' => (string) $r['ethnicity']); 
-      //   $temp[] = array('v' => (int) $r['count']); 
-      //   $rows[] = array('c' => $temp);
-      // }
+      foreach($result[0] as $r) {
+        $temp = array();
+        $temp[] = array('v' => (string) $r['ethnicity']);
+        $temp[] = array('v' => (int) $r['count']);
+        $rows[] = array('c' => $temp);
+      }
       foreach($result as $r) {
         $temp = array();
         $temp[] = array('v' => (int) $r['plays']);
