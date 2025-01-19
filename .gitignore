@@ -1,1 +1,14 @@
-ext/error_log
+# Wrangler
+.wrangler/
+.dev.vars
+
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.cloudflare/
+
+# Environment variables
+.env
+.env.*
