@@ -88,9 +88,13 @@
     </div>
     <div class="large-12 columns text-center panel">
         <?php 
-            if(isset($_GET['time'])) {
-                parseString($_GET['time']);
+            // Only accept the game's HH:MM:SS.mmm format; anything else is ignored
+            if(isset($_GET['time']) && is_string($_GET['time'])
+                && preg_match('/^\d{2}:\d{2}:\d{2}\.\d{3}\z/', $_GET['time'])) {
+                $time = $_GET['time'];
+                parseString($time);
             } else {
+                $time = null;
                 $pretty_time = null;
             }
 
@@ -131,13 +135,13 @@
             <?php 
             echo "You've successfully completed the game";
             if(isset($pretty_time)){ 
-                echo ", and in only <span class=\"time\">" . $pretty_time . "</span>";
+                echo ", and in only <span class=\"time\">" . htmlspecialchars($pretty_time, ENT_QUOTES, 'UTF-8') . "</span>";
             } else { 
                 echo "!";
             } ?>
         </h5>
         <div class="social">
-            <a href="https://twitter.com/share" class="twitter-share-button" title="Share your time on Twitter" data-url="http://teamtyro.com/" data-text="I just completed Team Tyro's game with a time of <?php echo $_GET['time'] ?>! Can you beat that and help their study?" data-size="large" data-count="none">Tweet</a>
+            <a href="https://twitter.com/share" class="twitter-share-button" title="Share your time on Twitter" data-url="http://teamtyro.com/" data-text="I just completed Team Tyro's game with a time of <?php echo htmlspecialchars((string)$time, ENT_QUOTES, 'UTF-8') ?>! Can you beat that and help their study?" data-size="large" data-count="none">Tweet</a>
             
         </div>
     </div>
