@@ -24,14 +24,14 @@
     <meta name="keywords" content="Project, AI, High School, Project Lead the Way, Java">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Team Tyro, studying AI and humans with a game">
-    <meta name="twitter:url" content="http://teamtyro.com/">
+    <meta name="twitter:url" content="https://teamtyro.com/">
     <meta name="twitter:description" content="We're a group of high school students that are studying the way different types of artificial intelligence (AI) algorithms learn, when compared to humans.">
-    <meta name="twitter:image" content="http://teamtyro.com/img/website-capture.png">
+    <meta name="twitter:image" content="https://teamtyro.com/img/website-capture.png">
     <meta property="og:locale" content="en_US" />
     <meta property="og:title" content="Team Tyro, studying AI and humans with a game"/>
     <meta property="og:description" content="We're a group of high school students that are studying the way different types of artificial intelligence (AI) algorithms learn, when compared to humans."/>
-    <meta property="og:url" content="http://teamtyro.com/"/>
-    <meta property="og:image" content="http://teamtyro.com/img/website-capture.png" />
+    <meta property="og:url" content="https://teamtyro.com/"/>
+    <meta property="og:image" content="https://teamtyro.com/img/website-capture.png" />
     <meta property="og:site_name" content="Team Tyro"/>
 
     <title>The Team - Team Tyro</title>
@@ -40,10 +40,8 @@
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/app_v1.01.css" />
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/js/jquery-1.9.1.min.js"><\/script>')</script>
+    <script src="/js/jquery-3.7.1.min.js"></script>
     <script src="/js/custom.modernizr.js"></script>
-    <script src="/js/deployJava.js"></script>
 
     <style>
     .person h3, h6 {
@@ -53,11 +51,6 @@
         margin-top: -10px;
     }
     </style>
-
-    <!-- IE Fix for HTML5 Tags -->
-    <!--[if lt IE 9]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 
 </head>
 <body>
@@ -109,8 +102,8 @@
             <p>Jack created the website design and backend to connect the Applet to a database for storage of all collected game and player data.  He used PHP, MySQL, JQuery, HTML5 and CSS3 to get the job done, and used a responsive framework, Foundation, to make the site friendly with all screen sizes.</p>
             <div class="meta">
                 <ul class="inline-list">
-                    <li><a href="http://jackketcham.com">Website</a></li>
-                    <li><a href="http://github.com/jketcham">GitHub</a></li>
+                    <li><a href="https://jackketcham.com">Website</a></li>
+                    <li><a href="https://github.com/jketcham">GitHub</a></li>
                 </ul>
             </div>
         </div>
@@ -120,7 +113,6 @@
             <p>Tyler came up with the design for the Java game that both the humans and AI would play, and created it using Java and the LWJGL library.  Tyler and Jack worked together to get the Applet communicating with the backend of the website.</p>
             <div class="meta">
                 <ul class="inline-list">
-                    <li><a href="http://finishnothing.tk">Website</a></li>
                     <li><a href="https://github.com/Velovix">GitHub</a></li>
                 </ul>
             </div>
@@ -154,10 +146,10 @@
 <footer class="sticky-bottom">
     <div class="row">
         <div class="large-10 columns">
-            <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+            <p>Code licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank" rel="noopener noreferrer">Apache License v2.0</a>. Documentation licensed under <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
             <ul class="inline-list">
-                <li><a href="http://github.com/teamtyro/teamtyro.com/issues?state=open">Submit issues</a></li>
-                <li><a href="http://github.com/teamtyro/teamtyro.com">Code</a></li>
+                <li><a href="https://github.com/teamtyro/teamtyro.com/issues?state=open">Submit issues</a></li>
+                <li><a href="https://github.com/teamtyro/teamtyro.com">Code</a></li>
             </ul>
         </div>
         <div class="large-2 columns">
@@ -166,24 +158,8 @@
     </div>
 </footer>
 
-    <script type="text/javascript">
-    $(window).scroll(function() {
-        if ($(this).scrollTop() > 100) {
-            $('.scrollup').fadeIn();
-        } else {
-            $('.scrollup').fadeOut();
-        }
-    });
-    $('.scrollup').click(function() {
-        $("html, body").animate({ scrollTop: 0 }, 600);
-        return false;
-    });
-    </script>
-
     <script src="/js/foundation.min.js"></script>
-    <script>
-        $(document).foundation();
-    </script>
+    <script src="/js/app.js"></script>
 
 </body>
 </html>
