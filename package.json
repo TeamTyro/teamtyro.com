@@ -1,11 +1,21 @@
 {
   "name": "teamtyro.com",
   "version": "1.0.0",
-  "description": "teamtyro.com ============ ***",
-  "main": "index.js",
+  "private": true,
+  "description": "Team Tyro project website",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "wrangler pages dev",
+    "deploy": "wrangler pages deploy"
+  },
+  "engines": {
+    "node": ">=22.23.4 <23 || >=24.22.1 <25 || >=26.12.1"
   },
   "author": "",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "wrangler": "4.149.0"
+  },
+  "overrides": {
+    "undici": "^7.30.1"
+  }
 }

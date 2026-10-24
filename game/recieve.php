@@ -31,25 +31,28 @@
     }
     parseData($body);
 
-    $conn = mysql_connect('localhost:3036', $dbuser, $dbpass);
+    // Return false on failure (PHP 8.1+ throws by default) so errors are
+    // handled below and never echoed back to the client
+    mysqli_report(MYSQLI_REPORT_OFF);
+
+    $conn = @mysqli_connect('localhost', $dbuser, $dbpass, 'c0smic_maze-game', 3036);
     if(! $conn )
     {
-        die('Could not connect: ' . mysql_error());
+        error_log('Could not connect: ' . mysqli_connect_error());
+        die('Could not connect');
     }
     unset($dbuser, $dbpass);
 
-    mysql_select_db('c0smic_maze-game');
-
     function sendData() {
-        global $client, $plays, $email, $gender, $age, $ethnicity, $ttime, $moves, $sql;
+        global $sql;
         if(isset($_COOKIE['game_first-run'])){
             $sql = "INSERT INTO game_returning (client, plays, email, gender, age, ethnicity, ttime, moves)
             VALUES
-            ('$client', '$plays', '$email', '$gender', '$age', '$ethnicity', '$ttime', '$moves')";
+            (?, ?, ?, ?, ?, ?, ?, ?)";
         } else {
             $sql = "INSERT INTO game_first_run (client, plays, email, gender, age, ethnicity, ttime, moves)
             VALUES
-            ('$client', '$plays', '$email', '$gender', '$age', '$ethnicity', '$ttime', '$moves')";
+            (?, ?, ?, ?, ?, ?, ?, ?)";
         }
     }
     if($ttime != ""  && $moves != ""){
@@ -58,13 +61,18 @@
         die('Could not enter data: Values missing from ttime & moves');
     }
 
-    $retval = mysql_query( $sql, $conn );
-    if(! $retval )
+    // Prepared statement: player-supplied values are bound, never spliced into SQL
+    $stmt = mysqli_prepare($conn, $sql);
+    if(! $stmt
+        || ! mysqli_stmt_bind_param($stmt, 'ssssssss', $client, $plays, $email, $gender, $age, $ethnicity, $ttime, $moves)
+        || ! mysqli_stmt_execute($stmt))
     {
-        die('Could not enter data: ' . mysql_error());
+        error_log('Could not enter data: ' . mysqli_error($conn));
+        die('Could not enter data');
     }
+    mysqli_stmt_close($stmt);
 
-    mysql_close($conn);
+    mysqli_close($conn);
     echo $str;
 
 ?>

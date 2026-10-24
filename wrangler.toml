@@ -1,5 +1,3 @@
 name = "teamtyro"
-compatibility_date = "2024-01-01"
-
-[site]
-bucket = "./public"
+pages_build_output_dir = "./public"
+compatibility_date = "2026-10-01"
